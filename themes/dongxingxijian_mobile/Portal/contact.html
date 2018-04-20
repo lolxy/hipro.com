@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>{$site_seo_title} {$site_name}</title>
+		<meta name="keywords" content="{$site_seo_keywords}" />
+		<meta name="description" content="{$site_seo_description}">
+		<link rel="stylesheet" href="__TMPL__Public/assets/css/swiper.min.css">
+		<tc_include file="Public:head" />
+        <script src="http://api.map.baidu.com/api?v=1.3"></script>
+        <style>
+img {
+	max-width: none;
+}
+		.main-box{padding: 0 1rem;}
+        .contact-wrap{padding: 1rem 0;background-color: #fff;}
+		.s-header{display:flex; flex-direction:column;text-align: center;margin-bottom: 20px;}
+		.s-header .h{display:block;width: 1.5rem;height: 1.5rem;text-align: center;line-height: 1.5rem;font-size: 20px;font-weight: bold;background-color: #000;border-radius:1.5rem;margin: 10px auto;color:#ffffff;}
+		.s-header span{line-height: 30px;font-size: 16px;font-weight: bold;}
+		.main-box h1{font-size: 20px;text-align: center;line-height: 50px;font-weight: bold; letter-spacing:5px;}
+</style>
+	</head>
+<body>
+<tc_include file="Public:nav" />
+
+<section class="wrapper">
+	<div class="contact-wrap">
+    	<div class="s-header">
+        	<span class="h">联</span>
+            <span>CONNECTION</span>
+            <span>&times;</span>
+            <p>服务咨询 | 媒体联络 | 学术活动 | 展览邀请 | 参观交流</p>
+        </div>
+        
+        <php>
+        $contact_slides=sp_getslide("contact_ads");
+        </php>
+    
+        <div class="contact-ads">
+            <notempty name="contact_slides">
+                <foreach name="contact_slides" item="vo" key="k">
+                    <if condition="$k==0">
+                        <div class="main-img-box">
+                            <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}"/>
+                        </div>
+                    </if>
+                </foreach>
+            </notempty>
+        </div>
+        
+         <div class="main-box">
+        	<div class="box">
+            	<h2>登门垂询敬请提前预约</h2>
+                <p>0591 - 86396800</p>
+            </div>
+            
+            <div class="box">
+            	<h2>东形西见机构地址</h2>
+                <p>福州市仓山区金达路大榕树创意园<br/>2号楼1008-1010</p>
+            </div>
+            
+            <div class="box">
+            	<h2>官方网站</h2>
+                <p>www.dongxingxijian.com</p>
+            </div>
+            
+            <div class="box">
+            	<h2>官方邮箱</h2>
+                <p>dxsj2017@qq.com</p>
+            </div>
+            
+            <div style="margin-top:20px"></div>
+         </div>
+        <div class="map-wrapper">
+			<a href="{:leuu('Portal/page/index',array('id'=>24))}">
+            	<img src="__TMPL__Public/assets/images/daohang.png" alt="">
+            </a>
+        </div>
+        
+        <div class="main-box">
+        	<div class="box">
+            	<h2>扫描二维码更多关于东形西见</h2>
+                <p style="width:220px;text-align:center;margin:0 auto;"><img src="__TMPL__Public/assets/images/erweima.png" alt=""></p>
+            </div>
+         </div>
+    </div>
+</section>
+
+<tc_include file="Public:scripts"/>
+<script src="__TMPL__Public/assets/js/swiper.jquery.min.js"></script>
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true,
+    slidesPerView: 3,
+    paginationClickable: true,
+    spaceBetween: 10
+  })
+</script>
+{:hook('footer_end')}
+</body>
+</html>

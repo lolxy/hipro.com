@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>{$site_seo_title} {$site_name}</title>
+		<meta name="keywords" content="{$site_seo_keywords}" />
+		<meta name="description" content="{$site_seo_description}">
+		<tc_include file="Public:head" />
+	</head>
+<body>
+<tc_include file="Public:nav" />
+
+<?php
+$tag='cid:2;order:listorder asc,post_modified desc;';
+$posts=sp_sql_posts($tag);
+?>
+
+<section class="wrapper">
+  <div class="workslist-container">
+		<notempty name="posts">
+    <ul>
+    <foreach name="posts" item="vo">
+    <php>
+    $smeta=json_decode($vo['smeta'],true);
+    </php>
+      <li>
+        <a href="{:leuu('Portal/article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">
+        <if condition="empty($smeta['thumb'])">
+            <img src="__TMPL__Public/assets/images/default_tupian1.png" alt="" class="img-responsive"/>
+        <else />
+            <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" alt="" class="img-responsive"/>
+        </if>
+        </a>
+        <div class="content">
+          <a href="{:leuu('Portal/article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" class="text-ellipsis">
+            {$vo.post_title}
+          </a>
+          <p>{$vo.post_excerpt}</p>
+          <div class="op-box">
+            <span class="view">{$vo.post_hits}</span>
+            <span class="zan">{$vo.post_like}</span>
+          </div>
+        </div>
+      </li>
+   </foreach>
+    </ul>
+		<else/>
+			<div class="nomore">-- 没有更多数据 --</div>
+		</notempty>
+  </div>
+</section>
+
+<tc_include file="Public:footer"/>
+<tc_include file="Public:scripts"/>
+{:hook('footer_end')}
+</body>
+</html>

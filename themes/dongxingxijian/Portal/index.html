@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>{$site_seo_title} {$site_name}</title>
+		<meta name="keywords" content="{$site_seo_keywords}" />
+		<meta name="description" content="{$site_seo_description}">
+		<link rel="stylesheet" href="__TMPL__Public/assets/css/swiper.min.css">
+		<tc_include file="Public:head" />
+		<style>
+			body{transition:all ease-in-out 2s;}
+			.body-hide{opacity:0;}
+			.wrapper{position: relative;z-index: 2;background-color:#d4d4dc;}
+			.swiper-slide img{width:100%;}
+			.swiper-pagination-bullet{background: #ffffff;}
+			.swiper-pagination-bullet-active{background: #0b090a;}
+		</style>
+	</head>
+<body class="body-hide">
+<tc_include file="Public:nav" />
+
+<div class="instruction-contain"></div>
+<php>
+$home_slides=sp_getslide("index_ads");
+</php>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <foreach name="home_slides" item="vo" key="k">
+            <div class="swiper-slide">
+                <a href="{$vo['slide_url']}"><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="{$vo['slide_name']}"/></a>
+            </div>
+        </foreach>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<php>
+$case_slides=sp_getslide("index_category_list");
+</php>
+<section class="wrapper">
+<!-- 其他主图 -->
+<div class="workslist">
+  <ul>
+  <foreach name="case_slides" item="vo" key="k">
+    <li>
+      <a href="{$vo['slide_url']}">
+        <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="{$vo['slide_name']}" class="img-responsive"/>
+      </a>
+    </li>
+    </foreach>
+  </ul>
+</div>
+
+</section>
+<tc_include file="Public:scripts"/>
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+		loop: true,
+		 // 如果需要分页器
+    	pagination: '.swiper-pagination',
+		paginationClickable: true,
+		autoHeight:true
+  	})
+  
+	$(".instruction-contain").addClass("get-in");
+	setTimeout(function() {
+		$(".instruction-contain").addClass("end-hide");
+	},2000);
+	$("body").removeClass("body-hide");
+  </script>
+{:hook('footer_end')}
+</body>
+</html>
