@@ -1,1 +1,0 @@
-a:1:{s:6:"static";a:2:{s:22:"portal/list/index?id=4";s:6:"sizhai";s:22:"portal/list/index?id=5";s:8:"gongjian";}}
