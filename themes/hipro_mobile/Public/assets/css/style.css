@@ -4,12 +4,9 @@ html,body{font-family: fzlthft;}
  .instruction-contain.end-hide {z-index: -1;opacity: 0; }
 /*******标题栏************/
 header{ background-color: #000000; height: 3.2rem;width: 100%;box-sizing:border-box;position:relative;}
-header .h-head{display:flex; justify-content:space-between;height:3.2rem;align-items:center;padding: 0 0.8rem;color:#ffffff;}
-header .h-head p{font-family: fzlthft;font-size:15px;}
-header .h-head p a{color:#dcdedd;font-weight:bold;}
-header .h-head p:first-child{font-weight:bold;}
-header .logo{ width: 2.2224rem; position: absolute; top: 0; left: 0; }
-header .title{ margin-left: 2.2224rem; margin-right: 2.2224rem; text-align: center; line-height: 1.1112rem; color:#ffffff; font-size: 0.4167rem; font-weight: bold; letter-spacing: 2px; }
+header .h-head{display:flex; justify-content:center;;height:3.2rem;align-items:center;padding: 0 0.8rem;color:#ffffff;}
+header .h-head a{display: block;width: 60%;overflow: hidden;text-align: center;}
+header .logo{max-width: 100%;height: auto;}
 header .searchbox,header .menubox{ width: 1.2rem; height: 1.3rem;}
 header .searchbox{right: 1.1112rem;}
 header .search-wrap{ position: absolute; top: 0.1556rem; left: 100%; transition: all ease-in-out .5s; z-index: 4; }
@@ -179,13 +176,13 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 
 /*关于我们*/
 .main-box,.about-jieshao{padding:0 1rem;font-family: fzlthft;}
-.main-box p,.about-jieshao p{font-family: fzlthft;font-size:14px;line-height: 30px;color:#898989;font-weight: 500;}
+.main-box p,.about-jieshao p{font-family: fzlthft;font-size:14px;line-height: 30px;color:#000000;font-weight: 500;}
 .main-box p{text-align: center;}
 .about-photo img{vertical-align: top;width:100%}
 .about-photo b{padding: 0.33rem;text-align: center;font-weight: bold;font-size:14px;display:block;}
 .mt40{margin-top: 0.6rem;}
 .main-box .box,.about-jieshao{margin-top: 1rem;}
-.main-box .box h2{width: 80%;background-color: #000;color:#ffffff;line-height: 0.6rem;font-size: 15px;margin: 0 auto;text-align: center;margin-bottom: 20px;font-family: fzlthft;}
+.main-box .box h2{width: 50%;background-color: #000;color:#ffffff;line-height: 0.85rem;font-size: 15px;margin: 0 auto;text-align: center;margin-bottom: 20px;font-family: fzlthft;}
 .about-jieshao .a-photo{padding-top: 15px;}
 
 .about-jieshao .js-box{display:flex;height: 5rem;}
