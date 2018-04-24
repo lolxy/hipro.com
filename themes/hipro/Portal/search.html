@@ -2,8 +2,8 @@
 	<html>
 	<head>
 		<title>搜索 {$site_name} </title>
-		<meta name="keywords" content="" />
-		<meta name="description" content="">
+		<meta name="keywords" content="{$keyword}" />
+		<meta name="description" content="{$keyword}">
 		<tc_include file="Public:head" />
 	</head>
 
@@ -57,7 +57,6 @@
 		</div>
 	</section>
 
-	<tc_include file="Public:footer"/>
 	<tc_include file="Public:scripts"/>
 	{:hook('footer_end')}
 	</body>
