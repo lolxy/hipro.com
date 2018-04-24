@@ -1,17 +1,11 @@
- /*引入外部字体文件*/
-@font-face{
-   font-family: myFirstFont;
-   /*ttf格式兼容非IE*/
-   src:url(../fonts/FZLTHFW.TTF);
-}
-html,body{font-family: myFirstFont;}
+html,body{font-family: fzlthft;}
 .instruction-contain{position:fixed;top: 0;bottom: 0;width: 100%;background: url(../images/init.jpg) center center no-repeat;background-size:cover;z-index:100;opacity: 0;transition: opacity 1s ease-in-out, z-index 0.1s linear 1.1s;}
  .instruction-contain.get-in {opacity: 1;}
  .instruction-contain.end-hide {z-index: -1;opacity: 0; }
 /*******标题栏************/
 header{ background-color: #000000; height: 3.2rem;width: 100%;box-sizing:border-box;position:relative;}
 header .h-head{display:flex; justify-content:space-between;height:3.2rem;align-items:center;padding: 0 0.8rem;color:#ffffff;}
-header .h-head p{font-family: myFirstFont;font-size:15px;}
+header .h-head p{font-family: fzlthft;font-size:15px;}
 header .h-head p a{color:#dcdedd;font-weight:bold;}
 header .h-head p:first-child{font-weight:bold;}
 header .logo{ width: 2.2224rem; position: absolute; top: 0; left: 0; }
@@ -33,7 +27,7 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .navlist{position:fixed;left:50%;width: 90%;top: 2.6rem;z-index:-1;margin-left: -45%;background-color: #727071;padding: 10px 20px;box-sizing:border-box;overflow: hidden;transition:all ease-in-out 0.8s;opacity:0; transform:translate(0,-100%);}
 .navlist.showNav{z-index:5;opacity:1;transform:translate(0,0);}
 .navlist li{margin-bottom: 18px;line-height: 30px;}
-.navlist li a{display:block;width: 100%;height: 30px;line-height: 30px;color:#e2e2e2;border-bottom: 1px solid #e2e2e2;font-weight:500;font-size: 14px;font-family: myFirstFont;}
+.navlist li a{display:block;width: 100%;height: 30px;line-height: 30px;color:#e2e2e2;border-bottom: 1px solid #e2e2e2;font-weight:500;font-size: 14px;font-family: fzlthft;}
 .navlist .close{width: 20px;height: 20px;text-align: center;line-height: 20px;margin-bottom: 5px;float: left;color:#ffffff;opacity:1;text-shadow:none;font-size: 24px;font-weight: 200;}
 /* 首页样式 */
 .index-welcome-container { position: fixed; top: 1.1112rem; left: 0; z-index: 1; width: 100%; height: 33.3333333vh; background-repeat: no-repeat; background-position: center; background-size: cover; -webkit-overflow-scrolling: touch; -webkit-transform: translateZ(0); transform: translateZ(0); }
@@ -105,10 +99,10 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 */
 .newslist-container,.wrapper{overflow: hidden;}
 .newslist-container .news-list li{padding-top: 15px;background-color: #fff;}
-.newslist-container .news-list li a{display:block;width: 100%;height: 100%;overflow: hidden;position:relative;font-family: myFirstFont;color:#ffffff;font-family: myFirstFont;}
+.newslist-container .news-list li a{display:block;width: 100%;height: 100%;overflow: hidden;position:relative;font-family: fzlthft;color:#ffffff;font-family: fzlthft;}
 .newslist-container .news-list li a .content{width: 100%;height: 100%;text-align: center;display:flex;flex-direction:column;align-items:center; justify-content:center;padding: 20px;background-color: #fff;}
-.newslist-container .news-list li a .content h2{font-size:18px;width: 100%;color:#333333;height: 30px;font-weight: 600;font-family: myFirstFont;line-height: 30px;margin-bottom: 5px;}
-.newslist-container .news-list li a .content p{font-size:14px;color:#919191;line-height: 28px;font-family: myFirstFont;}
+.newslist-container .news-list li a .content h2{font-size:18px;width: 100%;color:#333333;height: 30px;font-weight: 600;font-family: fzlthft;line-height: 30px;margin-bottom: 5px;}
+.newslist-container .news-list li a .content p{font-size:14px;color:#919191;line-height: 28px;font-family: fzlthft;}
 .newslist-container .more{display: block;width: 2.4rem;height: 0.8rem;text-align: center;line-height: 0.8rem;color:#393f4d;font-size: 0.32rem;font-weight: bold;border: 1px solid #1d1e22;margin: 0.5rem auto;}
 .wrapper .nomore{height:35px;line-height:35px;text-align:center;margin-top: 10px;margin-bottom: 10px;}
 /* 获奖作品 */
@@ -184,14 +178,14 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 #footer .copyright p{line-height: 0.5rem;color:#ffdada;font-size: 0.28rem;}
 
 /*关于我们*/
-.main-box,.about-jieshao{padding:0 1rem;font-family: myFirstFont;}
-.main-box p,.about-jieshao p{font-family: myFirstFont;font-size:14px;line-height: 30px;color:#898989;font-weight: 500;}
+.main-box,.about-jieshao{padding:0 1rem;font-family: fzlthft;}
+.main-box p,.about-jieshao p{font-family: fzlthft;font-size:14px;line-height: 30px;color:#898989;font-weight: 500;}
 .main-box p{text-align: center;}
 .about-photo img{vertical-align: top;width:100%}
 .about-photo b{padding: 0.33rem;text-align: center;font-weight: bold;font-size:14px;display:block;}
 .mt40{margin-top: 0.6rem;}
 .main-box .box,.about-jieshao{margin-top: 1rem;}
-.main-box .box h2{width: 80%;background-color: #000;color:#ffffff;line-height: 0.6rem;font-size: 15px;margin: 0 auto;text-align: center;margin-bottom: 20px;font-family: myFirstFont;}
+.main-box .box h2{width: 80%;background-color: #000;color:#ffffff;line-height: 0.6rem;font-size: 15px;margin: 0 auto;text-align: center;margin-bottom: 20px;font-family: fzlthft;}
 .about-jieshao .a-photo{padding-top: 15px;}
 
 .about-jieshao .js-box{display:flex;height: 5rem;}
@@ -205,5 +199,5 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .about-jieshao .js-box .a-photo{width: 3rem;margin-left: 10px;}
 .js-content .p1,.js-content .p2,.about-jieshao .js-box{margin-bottom: 0.65rem;}
 
-.s-header,.s-header p{font-family: myFirstFont;}
+.s-header,.s-header p{font-family: fzlthft;}
 .s-header p{margin-top: 10px;font-weight: bold;}

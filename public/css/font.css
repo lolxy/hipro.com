@@ -1,0 +1,21 @@
+/*引入外部字体文件*/
+@font-face{
+  font-family: 'fzltcxhjt';
+  src:url(./font/fzltcxhjt.TTF);
+}
+@font-face{
+  font-family: 'fzlthft';
+  src:url(./font/fzlthft.TTF);
+}
+@font-face{
+  font-family: 'fzltthft';
+  src:url(./font/fzltthft.TTF);
+}
+@font-face{
+  font-family: 'fzltthjt';
+  src:url(./font/fzltthjt.TTF);
+}
+@font-face{
+  font-family: 'fzltzch';
+  src:url(./font/fzltzch.TTF);
+}
