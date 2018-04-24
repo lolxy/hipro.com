@@ -82,7 +82,7 @@ return array (
   'ADMIN_USER_USERINFO' => '修改信息',
   'ADMIN_USER_USERINFO_POST' => '修改信息提交',
   'ADMIN_SETTING_CLEARCACHE' => '清除缓存',
-  'ADMIN_SLIDE_DEFAULT' => '图片',
+  'ADMIN_SLIDE_DEFAULT' => '图片管理',
   'ADMIN_AD_INDEX' => '网站广告',
   'ADMIN_LINK_INDEX' => '友情链接',
   'ADMIN_RECYCLE_DEFAULT' => '回收站',

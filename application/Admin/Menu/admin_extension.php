@@ -10,7 +10,7 @@ return array (
   'icon' => 'cloud',
   'remark' => '',
   'listorder' => '40',
-  'children' => 
+  'children' =>
   array (
     array (
       'app' => 'Admin',
@@ -23,7 +23,7 @@ return array (
       'icon' => '',
       'remark' => '',
       'listorder' => '0',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Admin',
@@ -48,7 +48,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '0',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -113,7 +113,7 @@ return array (
       'icon' => '',
       'remark' => '',
       'listorder' => '0',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Admin',
@@ -138,7 +138,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '0',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -203,7 +203,7 @@ return array (
       'icon' => '',
       'remark' => '',
       'listorder' => '0',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Admin',
@@ -226,11 +226,11 @@ return array (
       'data' => '',
       'type' => '1',
       'status' => '1',
-      'name' => '图片',
+      'name' => '图片管理',
       'icon' => '',
       'remark' => '',
       'listorder' => '1',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Admin',
@@ -243,7 +243,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '0',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -316,7 +316,7 @@ return array (
               'icon' => '',
               'remark' => '',
               'listorder' => '1000',
-              'children' => 
+              'children' =>
               array (
                 array (
                   'app' => 'Admin',
@@ -343,7 +343,7 @@ return array (
               'icon' => '',
               'remark' => '',
               'listorder' => '1000',
-              'children' => 
+              'children' =>
               array (
                 array (
                   'app' => 'Admin',
@@ -372,7 +372,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '0',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -397,7 +397,7 @@ return array (
               'icon' => '',
               'remark' => '',
               'listorder' => '1000',
-              'children' => 
+              'children' =>
               array (
                 array (
                   'app' => 'Admin',
@@ -424,7 +424,7 @@ return array (
               'icon' => '',
               'remark' => '',
               'listorder' => '1000',
-              'children' => 
+              'children' =>
               array (
                 array (
                   'app' => 'Admin',
@@ -455,7 +455,7 @@ return array (
       'icon' => '',
       'remark' => '',
       'listorder' => '2',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Admin',
@@ -492,7 +492,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '1000',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -519,7 +519,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '1000',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -548,7 +548,7 @@ return array (
       'icon' => '',
       'remark' => '',
       'listorder' => '3',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Admin',
@@ -597,7 +597,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '1000',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -624,7 +624,7 @@ return array (
           'icon' => '',
           'remark' => '',
           'listorder' => '1000',
-          'children' => 
+          'children' =>
           array (
             array (
               'app' => 'Admin',
@@ -653,7 +653,7 @@ return array (
       'icon' => 'leaf',
       'remark' => '',
       'listorder' => '4',
-      'children' => 
+      'children' =>
       array (
         array (
           'app' => 'Api',
