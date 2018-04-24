@@ -11,19 +11,19 @@ class SlidecatController extends AdminbaseController{
 		$this->slidecat_model = D("Common/SlideCat");
 	}
 	
-	// 幻灯片分类列表
+	// 图片分类列表
 	public function index(){
 		$cats=$this->slidecat_model->where("cat_status!=0")->select();
 		$this->assign("slidecats",$cats);
 		$this->display();
 	}
 	
-	// 幻灯片分类添加
+	// 图片分类添加
     public function add() {
         $this->display();
     }
 	
-    // 幻灯片分类添加提交
+    // 图片分类添加提交
     public function add_post() {
     	if (IS_POST) {
     		if ($this->slidecat_model->create()!==false) {
@@ -38,7 +38,7 @@ class SlidecatController extends AdminbaseController{
     	}
     }
     
-    // 幻灯片分类编辑
+    // 图片分类编辑
 	public function edit(){
 		$id= I("get.id",0,'intval');
 		$slidecat=$this->slidecat_model->where(array('cid'=>$id))->find();
@@ -46,7 +46,7 @@ class SlidecatController extends AdminbaseController{
 		$this->display();
 	}
 	
-	// 幻灯片分类编辑提交
+	// 图片分类编辑提交
 	public function edit_post(){
 		if (IS_POST) {
 			if ($this->slidecat_model->create()!==false) {
@@ -61,7 +61,7 @@ class SlidecatController extends AdminbaseController{
 		}
 	}
 	
-	// 幻灯片分类删除
+	// 图片分类删除
 	public function delete(){
 
 		$id = I("get.id",0,'intval');

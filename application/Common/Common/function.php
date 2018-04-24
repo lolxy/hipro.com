@@ -1128,8 +1128,8 @@ function sp_getad($ad_name){
 }
 
 /**
- * 根据幻灯片标识获取所有幻灯片
- * @param string $slide 幻灯片标识
+ * 根据图片标识获取所有图片
+ * @param string $slide 图片标识
  * @return array;
  */
 function sp_getslide($slide,$limit=5,$order = "listorder ASC"){
