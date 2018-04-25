@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-25 00:13:13
+Date: 2018-04-25 17:07:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -86,7 +86,7 @@ CREATE TABLE `hi_auth_rule` (
   `condition` varchar(300) NOT NULL DEFAULT '' COMMENT '规则附加条件',
   PRIMARY KEY (`id`),
   KEY `module` (`module`,`status`,`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=186 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_auth_rule
@@ -108,7 +108,7 @@ INSERT INTO `hi_auth_rule` VALUES ('14', 'Portal', 'admin_url', 'portal/adminpos
 INSERT INTO `hi_auth_rule` VALUES ('15', 'Portal', 'admin_url', 'portal/adminpost/edit_post', '', '提交编辑', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('16', 'Portal', 'admin_url', 'portal/adminpost/add', '', '添加资讯', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('17', 'Portal', 'admin_url', 'portal/adminpost/add_post', '', '提交添加', '1', '');
-INSERT INTO `hi_auth_rule` VALUES ('18', 'Portal', 'admin_url', 'portal/adminterm/index', '', '分类管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('18', 'Portal', 'admin_url', 'portal/adminterm/default', '', '分类管理', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('19', 'Portal', 'admin_url', 'portal/adminterm/listorders', '', '文章分类排序', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('20', 'Portal', 'admin_url', 'portal/adminterm/delete', '', '删除分类', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('21', 'Portal', 'admin_url', 'portal/adminterm/edit', '', '编辑分类', '1', '');
@@ -123,7 +123,7 @@ INSERT INTO `hi_auth_rule` VALUES ('29', 'Portal', 'admin_url', 'portal/adminpag
 INSERT INTO `hi_auth_rule` VALUES ('30', 'Portal', 'admin_url', 'portal/adminpage/add', '', '添加页面', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('31', 'Portal', 'admin_url', 'portal/adminpage/add_post', '', '提交添加', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('32', 'Admin', 'admin_url', 'admin/recycle/default', '', '回收站', '1', '');
-INSERT INTO `hi_auth_rule` VALUES ('33', 'Portal', 'admin_url', 'portal/adminpost/recyclebin', '', '文章回收', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('33', 'Portal', 'admin_url', 'portal/adminpost/recyclebin', '', '资讯回收', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('34', 'Portal', 'admin_url', 'portal/adminpost/restore', '', '文章还原', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('35', 'Portal', 'admin_url', 'portal/adminpost/clean', '', '彻底删除', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('36', 'Portal', 'admin_url', 'portal/adminpage/recyclebin', '', '页面回收', '1', '');
@@ -143,7 +143,7 @@ INSERT INTO `hi_auth_rule` VALUES ('49', 'Admin', 'admin_url', 'admin/plugin/set
 INSERT INTO `hi_auth_rule` VALUES ('50', 'Admin', 'admin_url', 'admin/plugin/setting_post', '', '插件设置提交', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('51', 'Admin', 'admin_url', 'admin/plugin/install', '', '插件安装', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('52', 'Admin', 'admin_url', 'admin/plugin/uninstall', '', '插件卸载', '1', '');
-INSERT INTO `hi_auth_rule` VALUES ('53', 'Admin', 'admin_url', 'admin/slide/default', '', '幻灯片管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('53', 'Admin', 'admin_url', 'admin/slide/default', '', '图片管理', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('54', 'Admin', 'admin_url', 'admin/slide/index', '', '幻灯片管理', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('55', 'Admin', 'admin_url', 'admin/slide/listorders', '', '幻灯片排序', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('56', 'Admin', 'admin_url', 'admin/slide/toggle', '', '幻灯片显示切换', '1', '');
@@ -262,8 +262,18 @@ INSERT INTO `hi_auth_rule` VALUES ('170', 'Admin', 'admin_url', 'admin/menu/back
 INSERT INTO `hi_auth_rule` VALUES ('171', 'Admin', 'admin_url', 'admin/menu/export_menu_lang', '', '导出后台菜单多语言包', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('172', 'Admin', 'admin_url', 'admin/menu/restore_menu', '', '还原菜单', '1', '');
 INSERT INTO `hi_auth_rule` VALUES ('173', 'Admin', 'admin_url', 'admin/menu/getactions', '', '导入新菜单', '1', '');
-INSERT INTO `hi_auth_rule` VALUES ('174', 'Admin', 'admin_url', 'admin/variable/index', '', '变量管理', '1', '');
-INSERT INTO `hi_auth_rule` VALUES ('175', 'Portal', 'admin_url', 'portal/adminworks/index', '', '作品管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('174', 'Admin', 'admin_url', 'admin/variable/default', '', '变量管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('175', 'Portal', 'admin_url', 'portal/adminmember/index', '', '会员管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('176', 'Portal', 'admin_url', 'portal/admincoach/index', null, '教练管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('177', 'Portal', 'admin_url', 'portal/admincurriculum/index', null, '课程管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('178', 'Portal', 'admin_url', 'portal/adminmall/index', null, '商城管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('179', 'Admin', 'admin_url', 'admin/model/default', null, '模型管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('180', 'Portal', 'admin_url', 'portal/adminterm/index', null, '分类管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('181', 'Admin', 'admin_url', 'admin/variable/index', null, '变量管理', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('182', 'Portal', 'admin_url', 'portal/admincoach/recyclebin', null, '教练回收', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('183', 'Portal', 'admin_url', 'portal/adminmall/recyclebin', null, '商城回收', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('184', 'Portal', 'admin_url', 'portal/adminmember/recyclebin', null, '会员回收', '1', '');
+INSERT INTO `hi_auth_rule` VALUES ('185', 'Portal', 'admin_url', 'portal/admincurriculum/recyclebin', null, '课程回收', '1', '');
 
 -- ----------------------------
 -- Table structure for `hi_comments`
@@ -389,7 +399,7 @@ CREATE TABLE `hi_menu` (
   KEY `status` (`status`),
   KEY `parentid` (`parentid`),
   KEY `model` (`model`)
-) ENGINE=MyISAM AUTO_INCREMENT=189 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=199 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_menu
@@ -411,7 +421,7 @@ INSERT INTO `hi_menu` VALUES ('14', '7', 'Portal', 'AdminPost', 'edit', '', '1',
 INSERT INTO `hi_menu` VALUES ('15', '14', 'Portal', 'AdminPost', 'edit_post', '', '1', '0', '提交编辑', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('16', '7', 'Portal', 'AdminPost', 'add', '', '1', '0', '添加资讯', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('17', '16', 'Portal', 'AdminPost', 'add_post', '', '1', '0', '提交添加', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('18', '1', 'Portal', 'AdminTerm', 'index', '', '0', '1', '分类管理', '', '', '3');
+INSERT INTO `hi_menu` VALUES ('18', '0', 'Portal', 'AdminTerm', 'default', '', '0', '1', '分类管理', 'delicious', '', '3');
 INSERT INTO `hi_menu` VALUES ('19', '18', 'Portal', 'AdminTerm', 'listorders', '', '1', '0', '文章分类排序', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('20', '18', 'Portal', 'AdminTerm', 'delete', '', '1', '0', '删除分类', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('21', '18', 'Portal', 'AdminTerm', 'edit', '', '1', '0', '编辑分类', '', '', '1000');
@@ -425,8 +435,8 @@ INSERT INTO `hi_menu` VALUES ('28', '25', 'Portal', 'AdminPage', 'edit', '', '1'
 INSERT INTO `hi_menu` VALUES ('29', '28', 'Portal', 'AdminPage', 'edit_post', '', '1', '0', '提交编辑', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('30', '25', 'Portal', 'AdminPage', 'add', '', '1', '0', '添加页面', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('31', '30', 'Portal', 'AdminPage', 'add_post', '', '1', '0', '提交添加', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('32', '1', 'Admin', 'Recycle', 'default', '', '1', '1', '回收站', '', '', '6');
-INSERT INTO `hi_menu` VALUES ('33', '32', 'Portal', 'AdminPost', 'recyclebin', '', '1', '1', '文章回收', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('32', '0', 'Admin', 'Recycle', 'default', '', '1', '1', '回收站', 'trash', '', '6');
+INSERT INTO `hi_menu` VALUES ('33', '32', 'Portal', 'AdminPost', 'recyclebin', '', '1', '1', '资讯回收', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('34', '33', 'Portal', 'AdminPost', 'restore', '', '1', '0', '文章还原', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('35', '33', 'Portal', 'AdminPost', 'clean', '', '1', '0', '彻底删除', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('36', '32', 'Portal', 'AdminPage', 'recyclebin', '', '1', '1', '页面回收', '', '', '1');
@@ -440,8 +450,8 @@ INSERT INTO `hi_menu` VALUES ('43', '42', 'Admin', 'Backup', 'index_post', '', '
 INSERT INTO `hi_menu` VALUES ('44', '40', 'Admin', 'Backup', 'download', '', '1', '0', '下载备份', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('45', '40', 'Admin', 'Backup', 'del_backup', '', '1', '0', '删除备份', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('46', '40', 'Admin', 'Backup', 'import', '', '1', '0', '数据备份导入', '', '', '1000');
-INSERT INTO `hi_menu` VALUES ('188', '1', 'Portal', 'AdminWorks', 'index', '', '1', '1', '作品管理', '', '', '1');
-INSERT INTO `hi_menu` VALUES ('53', '0', 'Admin', 'Slide', 'default', '', '1', '1', '图片管理', '', '', '3');
+INSERT INTO `hi_menu` VALUES ('188', '192', 'Portal', 'AdminMember', 'index', '', '1', '1', '会员管理', '', '', '1');
+INSERT INTO `hi_menu` VALUES ('53', '0', 'Admin', 'Slide', 'default', '', '1', '1', '图片管理', 'image', '', '3');
 INSERT INTO `hi_menu` VALUES ('54', '53', 'Admin', 'Slide', 'index', '', '1', '1', '图片管理', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('55', '54', 'Admin', 'Slide', 'listorders', '', '1', '0', '图片排序', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('56', '54', 'Admin', 'Slide', 'toggle', '', '1', '0', '图片显示切换', '', '', '0');
@@ -471,9 +481,9 @@ INSERT INTO `hi_menu` VALUES ('79', '75', 'Admin', 'Link', 'edit', '', '1', '0',
 INSERT INTO `hi_menu` VALUES ('80', '79', 'Admin', 'Link', 'edit_post', '', '1', '0', '提交编辑', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('81', '75', 'Admin', 'Link', 'add', '', '1', '0', '添加友情链接', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('82', '81', 'Admin', 'Link', 'add_post', '', '1', '0', '提交添加', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('85', '0', 'Admin', 'Menu', 'default', '', '1', '0', '菜单管理', 'list', '', '1');
+INSERT INTO `hi_menu` VALUES ('85', '0', 'Admin', 'Menu', 'default', '', '1', '1', '菜单管理', 'list', '', '1');
 INSERT INTO `hi_menu` VALUES ('86', '85', 'Admin', 'Navcat', 'default1', '', '1', '0', '前台菜单', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('87', '86', 'Admin', 'Nav', 'index', '', '1', '0', '菜单管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('87', '86', 'Admin', 'Nav', 'index', '', '1', '1', '菜单管理', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('88', '87', 'Admin', 'Nav', 'listorders', '', '1', '0', '前台导航排序', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('89', '87', 'Admin', 'Nav', 'delete', '', '1', '0', '删除菜单', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('90', '87', 'Admin', 'Nav', 'edit', '', '1', '0', '编辑菜单', '', '', '1000');
@@ -486,7 +496,7 @@ INSERT INTO `hi_menu` VALUES ('96', '94', 'Admin', 'Navcat', 'edit', '', '1', '0
 INSERT INTO `hi_menu` VALUES ('97', '96', 'Admin', 'Navcat', 'edit_post', '', '1', '0', '提交编辑', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('98', '94', 'Admin', 'Navcat', 'add', '', '1', '0', '添加分类', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('99', '98', 'Admin', 'Navcat', 'add_post', '', '1', '0', '提交添加', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('100', '85', 'Admin', 'Menu', 'index', '', '1', '0', '后台菜单', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('100', '85', 'Admin', 'Menu', 'index', '', '1', '1', '后台菜单', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('101', '100', 'Admin', 'Menu', 'add', '', '1', '0', '添加菜单', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('102', '101', 'Admin', 'Menu', 'add_post', '', '1', '0', '提交添加', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('103', '100', 'Admin', 'Menu', 'listorders', '', '1', '0', '后台菜单排序', '', '', '0');
@@ -518,7 +528,7 @@ INSERT INTO `hi_menu` VALUES ('128', '127', 'Admin', 'Mailer', 'index_post', '',
 INSERT INTO `hi_menu` VALUES ('129', '126', 'Admin', 'Mailer', 'active', '', '1', '1', '注册邮件模板', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('130', '129', 'Admin', 'Mailer', 'active_post', '', '1', '0', '提交模板', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('131', '109', 'Admin', 'Setting', 'clearcache', '', '1', '1', '清除缓存', '', '', '1');
-INSERT INTO `hi_menu` VALUES ('132', '0', 'User', 'Indexadmin', 'default', '', '1', '1', '用户管理', 'group', '', '4');
+INSERT INTO `hi_menu` VALUES ('132', '0', 'User', 'Indexadmin', 'default', '', '1', '0', '用户管理', 'group', '', '4');
 INSERT INTO `hi_menu` VALUES ('139', '132', 'User', 'Indexadmin', 'default3', '', '1', '1', '管理组', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('140', '139', 'Admin', 'Rbac', 'index', '', '1', '1', '角色管理', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('141', '140', 'Admin', 'Rbac', 'member', '', '1', '0', '成员管理', '', '', '1000');
@@ -549,7 +559,17 @@ INSERT INTO `hi_menu` VALUES ('174', '100', 'Admin', 'Menu', 'backup_menu', '', 
 INSERT INTO `hi_menu` VALUES ('175', '100', 'Admin', 'Menu', 'export_menu_lang', '', '1', '0', '导出后台菜单多语言包', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('176', '100', 'Admin', 'Menu', 'restore_menu', '', '1', '0', '还原菜单', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('177', '100', 'Admin', 'Menu', 'getactions', '', '1', '0', '导入新菜单', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('187', '1', 'Admin', 'Variable', 'index', '', '1', '1', '变量管理', '', '', '4');
+INSERT INTO `hi_menu` VALUES ('187', '0', 'Admin', 'Variable', 'default', '', '1', '1', '变量管理', 'refresh', '', '4');
+INSERT INTO `hi_menu` VALUES ('189', '192', 'Portal', 'AdminCoach', 'index', '', '1', '1', '教练管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('190', '192', 'Portal', 'AdminCurriculum', 'index', '', '1', '1', '课程管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('191', '192', 'Portal', 'AdminMall', 'index', '', '1', '1', '商城管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('192', '0', 'Admin', 'Model', 'default', '', '1', '1', '模型管理', 'bookmark', '', '0');
+INSERT INTO `hi_menu` VALUES ('193', '18', 'Portal', 'AdminTerm', 'index', '', '1', '1', '分类管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('194', '187', 'Admin', 'Variable', 'index', '', '1', '1', '变量管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('195', '32', 'Portal', 'AdminCoach', 'recyclebin', '', '1', '1', '教练回收', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('196', '32', 'Portal', 'AdminMall', 'recyclebin', '', '1', '1', '商城回收', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('197', '32', 'Portal', 'AdminMember', 'recyclebin', '', '1', '1', '会员回收', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('198', '32', 'Portal', 'AdminCurriculum', 'recyclebin', '', '1', '1', '课程回收', '', '', '0');
 
 -- ----------------------------
 -- Table structure for `hi_nav`
@@ -643,7 +663,7 @@ CREATE TABLE `hi_options` (
 -- Records of hi_options
 -- ----------------------------
 INSERT INTO `hi_options` VALUES ('1', 'member_email_active', '{\"title\":\"ThinkCMF\\u90ae\\u4ef6\\u6fc0\\u6d3b\\u901a\\u77e5.\",\"template\":\"<p>\\u672c\\u90ae\\u4ef6\\u6765\\u81ea<a href=\\\"http:\\/\\/www.thinkcmf.com\\\">ThinkCMF<\\/a><br\\/><br\\/>&nbsp; &nbsp;<strong>---------------<strong style=\\\"white-space: normal;\\\">---<\\/strong><\\/strong><br\\/>&nbsp; &nbsp;<strong>\\u5e10\\u53f7\\u6fc0\\u6d3b\\u8bf4\\u660e<\\/strong><br\\/>&nbsp; &nbsp;<strong>---------------<strong style=\\\"white-space: normal;\\\">---<\\/strong><\\/strong><br\\/><br\\/>&nbsp; &nbsp; \\u5c0a\\u656c\\u7684<span style=\\\"FONT-SIZE: 16px; FONT-FAMILY: Arial; COLOR: rgb(51,51,51); LINE-HEIGHT: 18px; BACKGROUND-COLOR: rgb(255,255,255)\\\">#username#\\uff0c\\u60a8\\u597d\\u3002<\\/span>\\u5982\\u679c\\u60a8\\u662fThinkCMF\\u7684\\u65b0\\u7528\\u6237\\uff0c\\u6216\\u5728\\u4fee\\u6539\\u60a8\\u7684\\u6ce8\\u518cEmail\\u65f6\\u4f7f\\u7528\\u4e86\\u672c\\u5730\\u5740\\uff0c\\u6211\\u4eec\\u9700\\u8981\\u5bf9\\u60a8\\u7684\\u5730\\u5740\\u6709\\u6548\\u6027\\u8fdb\\u884c\\u9a8c\\u8bc1\\u4ee5\\u907f\\u514d\\u5783\\u573e\\u90ae\\u4ef6\\u6216\\u5730\\u5740\\u88ab\\u6ee5\\u7528\\u3002<br\\/>&nbsp; &nbsp; \\u60a8\\u53ea\\u9700\\u70b9\\u51fb\\u4e0b\\u9762\\u7684\\u94fe\\u63a5\\u5373\\u53ef\\u6fc0\\u6d3b\\u60a8\\u7684\\u5e10\\u53f7\\uff1a<br\\/>&nbsp; &nbsp; <a title=\\\"\\\" href=\\\"http:\\/\\/#link#\\\" target=\\\"_self\\\">http:\\/\\/#link#<\\/a><br\\/>&nbsp; &nbsp; (\\u5982\\u679c\\u4e0a\\u9762\\u4e0d\\u662f\\u94fe\\u63a5\\u5f62\\u5f0f\\uff0c\\u8bf7\\u5c06\\u8be5\\u5730\\u5740\\u624b\\u5de5\\u7c98\\u8d34\\u5230\\u6d4f\\u89c8\\u5668\\u5730\\u5740\\u680f\\u518d\\u8bbf\\u95ee)<br\\/>&nbsp; &nbsp; \\u611f\\u8c22\\u60a8\\u7684\\u8bbf\\u95ee\\uff0c\\u795d\\u60a8\\u4f7f\\u7528\\u6109\\u5feb\\uff01<br\\/><br\\/>&nbsp; &nbsp; \\u6b64\\u81f4<br\\/>&nbsp; &nbsp; ThinkCMF \\u7ba1\\u7406\\u56e2\\u961f.<\\/p>\"}', '1');
-INSERT INTO `hi_options` VALUES ('6', 'site_options', '{\"site_name\":\"HIPRO\",\"site_host\":\"http:\\/\\/www.hipro.com\\/\",\"site_logo\":\"admin\\/20180424\\/5adf47a266d0f.png\",\"site_erweima\":\"admin\\/20180108\\/5a5253d44db99.png\",\"site_admin_url_password\":\"\",\"site_tpl\":\"hipro\",\"mobile_tpl_enabled\":\"1\",\"site_adminstyle\":\"flat\",\"site_icp\":\"\\u95fdICP\\u590717031739\\u53f7\",\"site_admin_email\":\"admin@qq.com\",\"site_tongji\":\"\",\"site_copyright\":\"Copyright \\u00a92018-2019 hipro Corporation, All Rights Reserved\",\"site_seo_title\":\"\",\"site_seo_keywords\":\"\",\"site_seo_description\":\"\",\"urlmode\":\"2\",\"html_suffix\":\"html\",\"comment_time_interval\":\"60\"}', '1');
+INSERT INTO `hi_options` VALUES ('6', 'site_options', '{\"site_name\":\"HIPRO\",\"site_host\":\"http:\\/\\/www.hipro.com\\/\",\"site_logo\":\"admin\\/20180424\\/5adf47a266d0f.png\",\"site_erweima\":\"\",\"site_admin_url_password\":\"\",\"site_tpl\":\"hipro\",\"mobile_tpl_enabled\":\"1\",\"site_adminstyle\":\"flat\",\"site_icp\":\"\\u95fdICP\\u590717031739\\u53f7\",\"site_admin_email\":\"admin@qq.com\",\"site_tongji\":\"\",\"site_copyright\":\"Copyright \\u00a92018-2019 hipro Corporation, All Rights Reserved\",\"site_seo_title\":\"\",\"site_seo_keywords\":\"\",\"site_seo_description\":\"\",\"urlmode\":\"2\",\"html_suffix\":\"html\",\"comment_time_interval\":\"60\"}', '1');
 INSERT INTO `hi_options` VALUES ('7', 'cmf_settings', '{\"banned_usernames\":\"\"}', '1');
 INSERT INTO `hi_options` VALUES ('8', 'cdn_settings', '{\"cdn_static_root\":\"\"}', '1');
 
@@ -683,6 +703,8 @@ CREATE TABLE `hi_posts` (
   `post_source` varchar(150) DEFAULT NULL COMMENT '转载文章的来源',
   `post_date` datetime DEFAULT '2000-01-01 00:00:00' COMMENT 'post发布日期',
   `post_content` longtext COMMENT 'post内容',
+  `jingyan` text COMMENT '经验',
+  `leixing` text COMMENT '教练类型',
   `post_title` text COMMENT 'post标题',
   `post_excerpt` text COMMENT 'post摘要',
   `post_status` int(2) DEFAULT '1' COMMENT 'post状态，1已审核，0未审核,3删除',
@@ -703,14 +725,22 @@ CREATE TABLE `hi_posts` (
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`),
   KEY `post_date` (`post_date`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_posts
 -- ----------------------------
-INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43:40', '', '关于我们', '关于我们', '1', '1', '2018-04-24 22:43:29', null, '0', '2', '', '0', '{\"template\":\"about\",\"thumb\":\"\"}', '0', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('2', '1', '联系我们', null, '2018-04-24 22:43:53', '', '联系我们', '联系我们', '1', '1', '2018-04-24 22:43:43', null, '0', '2', '', '0', '{\"template\":\"contact\",\"thumb\":\"\"}', '0', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('3', '1', '地图导航', null, '2018-04-24 22:44:17', '', '地图导航', '地图导航', '1', '1', '2018-04-24 22:43:54', null, '0', '2', '', '0', '{\"template\":\"map\",\"thumb\":\"\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43:40', '', null, null, '关于我们', '关于我们', '1', '1', '2018-04-24 22:43:29', null, '0', '2', '', '0', '{\"template\":\"about\",\"thumb\":\"\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('2', '1', '联系我们', null, '2018-04-24 22:43:53', '', null, null, '联系我们', '联系我们', '1', '1', '2018-04-24 22:43:43', null, '0', '2', '', '0', '{\"template\":\"contact\",\"thumb\":\"\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('3', '1', '地图导航', null, '2018-04-24 22:44:17', '', null, null, '地图导航', '地图导航', '1', '1', '2018-04-24 22:43:54', null, '0', '2', '', '0', '{\"template\":\"map\",\"thumb\":\"\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('4', '1', '', null, '2018-04-25 15:02:19', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:31:48', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '2', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('5', '1', '', null, '2018-04-25 15:38:00', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', 'dasdsadsad', 'dsdsdas', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:45', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('6', '1', '', null, '2018-04-25 15:38:03', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '123', '123', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:36', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('7', '1', '', null, '2018-04-25 15:40:13', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:13', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('8', '1', '', null, '2018-04-25 15:40:14', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:14', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('11', '1', '', null, '2018-04-25 16:38:57', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡可享有10次健身课程', 'GO card', '', '1', '1', '2018-04-25 16:40:10', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae03ee6d24ef.png\"}', '1', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('12', '1', '', null, '2018-04-25 16:40:51', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡可享有10次健身课程', 'GO card', '', '1', '1', '2018-04-25 16:40:51', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae03ee6d24ef.png\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('10', '1', '', null, '2018-04-25 15:40:53', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', 'dasdsadsad', 'dsdsdas', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:53', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '1', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `hi_role`
@@ -868,11 +898,19 @@ CREATE TABLE `hi_term_relationships` (
   `status` int(2) NOT NULL DEFAULT '1' COMMENT '状态，1发布，0不发布',
   PRIMARY KEY (`tid`),
   KEY `term_taxonomy_id` (`term_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_term_relationships
 -- ----------------------------
+INSERT INTO `hi_term_relationships` VALUES ('1', '4', '6', '0', '1');
+INSERT INTO `hi_term_relationships` VALUES ('2', '5', '6', '0', '1');
+INSERT INTO `hi_term_relationships` VALUES ('3', '6', '6', '0', '1');
+INSERT INTO `hi_term_relationships` VALUES ('4', '7', '6', '0', '1');
+INSERT INTO `hi_term_relationships` VALUES ('5', '8', '6', '0', '1');
+INSERT INTO `hi_term_relationships` VALUES ('8', '11', '4', '0', '1');
+INSERT INTO `hi_term_relationships` VALUES ('7', '10', '6', '1', '1');
+INSERT INTO `hi_term_relationships` VALUES ('9', '12', '4', '0', '1');
 
 -- ----------------------------
 -- Table structure for `hi_users`
@@ -906,7 +944,7 @@ CREATE TABLE `hi_users` (
 -- ----------------------------
 -- Records of hi_users
 -- ----------------------------
-INSERT INTO `hi_users` VALUES ('1', 'admin', '###e5830b5cf8a5cd379ae42f87faa6b2f4', 'admin', 'admin@qq.com', 'www.dongxingxijian.com', '', '0', '2000-01-01', '', '127.0.0.1', '2018-04-24 23:33:36', '2018-01-07 09:42:27', '', '1', '0', '1', '0', '');
+INSERT INTO `hi_users` VALUES ('1', 'admin', '###e5830b5cf8a5cd379ae42f87faa6b2f4', 'admin', 'admin@qq.com', 'www.hipro.com', '', '0', '2000-01-01', '', '127.0.0.1', '2018-04-25 11:02:44', '2018-01-07 09:42:27', '', '1', '0', '1', '0', '');
 
 -- ----------------------------
 -- Table structure for `hi_user_favorites`

@@ -6,7 +6,7 @@
 			<li class="active"><a href="javascript:;">{:L('PORTAL_ADMINPAGE_RECYCLEBIN')}</a></li>
 		</ul>
 		<form class="well form-search" method="post" action="{:U('AdminPage/recyclebin')}">
-			时间： 
+			时间：
 			<input type="text" name="start_time" class="js-datetime" value="{$formget.start_time|default=''}" style="width:120px;" autocomplete="off">-
 			<input autocomplete="off" type="text" class="js-datetime" name="end_time" value="{$formget.end_time|default=''}" style="width: 120px;">
 			关键字：
@@ -22,8 +22,7 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="100">ID</th>
-						<th>标题</th>
-						<!-- <th>点击量</th> -->
+						<th>页面标题</th>
 						<th width="80">发布人</th>
 						<th width="120"><span>发布时间</span></th>
 						<th width="120">{:L('ACTIONS')}</th>
@@ -38,7 +37,7 @@
 					<td>{$users[$vo['post_author']]['user_login']}</td>
 					<td>{$vo.post_date}</td>
 					<td>
-						<a href="{:U('AdminPage/restore',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定还原吗？">还原</a>| 
+						<a href="{:U('AdminPage/restore',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定还原吗？">还原</a>|
 						<a href="{:U('AdminPage/clean',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
 					</td>
 				</tr>
@@ -47,8 +46,7 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="100">ID</th>
-						<th>标题</th>
-						<!-- <th>点击量</th> -->
+						<th>页面标题</th>
 						<th width="80">发布人</th>
 						<th width="120"><span>发布时间</span></th>
 						<th width="120">{:L('ACTIONS')}</th>

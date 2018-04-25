@@ -1,48 +1,64 @@
 <admintpl file="header" />
+<style type="text/css">
+.pic-list li {
+	margin-bottom: 5px;
+}
+</style>
+<script type="text/html" id="photos-item-wrapper">
+	<li id="savedimage{id}">
+		<input id="photo-{id}" type="hidden" name="photos_url[]" value="{filepath}">
+		<input id="photo-{id}-name" type="text" name="photos_alt[]" value="{name}" style="width: 160px;" title="图片名称">
+		<img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
+		<a href="javascript:upload_one_image('图片上传','#photo-{id}');">替换</a>
+		<a href="javascript:(function(){$('#savedimage{id}').remove();})();">移除</a>
+	</li>
+</script>
 </head>
 <body>
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
-			<li><a href="{:U('AdminPage/index')}">{:L('PORTAL_ADMINPAGE_INDEX')}</a></li>
-			<li class="active"><a href="{:U('AdminPage/add')}">{:L('PORTAL_ADMINPAGE_ADD')}</a></li>
+			<li><a href="{:U('AdminMember/index')}">{:L('PORTAL_ADMINMEMBER_INDEX')}</a></li>
+			<li class="active"><a href="{:U('AdminMember/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">添加会员卡</a></li>
 		</ul>
-		<form action="{:U('AdminPage/add_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
-			<input type="hidden" name="post[post_type]" value="2">
+		<form action="{:U('AdminMember/add_post')}" method="post" class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<input type="hidden" name="post[post_type]" value="3">
+			<input type="hidden" name="term" value="4">
 			<div class="row-fluid">
 				<div class="span9">
 					<table class="table table-bordered">
 						<tr>
-							<th width="80">标题</th>
+							<th width="100">会员卡名称：</th>
 							<td>
-								<input type="text" style="width: 400px;" name="post[post_title]" id="title" value="" placeholder="请输入标题"/>
+								<input type="text" style="width:400px;" name="post[post_title]" id="title" required value="" placeholder="请输入会员卡名称"/>
 								<span class="form-required">*</span>
 							</td>
 						</tr>
 						<tr>
-							<th>模版</th>
+							<th>会员特权一：</th>
 							<td>
-								<php>
-								$tpl_list=sp_admin_get_tpl_file_list();
-								unset($tpl_list['page']);
-								</php>
-								<select style="min-width: 290px;" name="smeta[template]">
-									<option value="page">page{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-									<foreach name="tpl_list" item="vo">
-									<option value="{$vo}">{$vo}{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-									</foreach>
-								</select>
+								<input type="text" style="width:400px;" name="post[leixing]" id="title" value="" placeholder="请输入会员特权"/>
+								<span class="form-required">*</span>
+							</td>
+						</tr>
+						<tr>
+							<th>会员特权二：</th>
+							<td>
+								<input type="text" style="width:400px;" name="post[jingyan]" id="title" value="" placeholder="请输入会员特权"/>
+								<span class="form-required">*</span>
 							</td>
 						</tr>
 						<tr>
 							<th>关键词</th>
-							<td><input type="text" name="post[post_keywords]" id="keywords" value="" style="width: 280px" placeholder="请输入关键字"> 多关键词之间用空格隔开</td>
+							<td><input type="text" name="post[post_keywords]" id="keywords" value="" style="width: 400px" placeholder="请输入关键字"> 多关键词之间用空格或者英文逗号隔开</td>
 						</tr>
 						<tr>
-							<th>摘要</th>
-							<td><textarea name="post[post_excerpt]" id="description" style='width: 98%; height: 200px;'></textarea></td>
+							<th>会员卡简介：</th>
+							<td>
+								<textarea name="post[post_excerpt]" id="description" style="width: 98%; height: 50px;" placeholder="请填写会员简介"></textarea>
+							</td>
 						</tr>
 						<tr>
-							<th>内容</th>
+							<th>会员卡介绍：</th>
 							<td>
 								<script type="text/plain" id="content" name="post[post_content]"></script>
 							</td>
@@ -52,27 +68,27 @@
 				<div class="span3">
 					<table class="table table-bordered">
 						<tr>
-							<th>缩略图</th>
+							<th><b>会员卡照片：</b></th>
 						</tr>
 						<tr>
 							<td>
 								<div style="text-align: center;">
 									<input type="hidden" name="smeta[thumb]" id="thumb" value="">
 									<a href="javascript:upload_one_image('图片上传','#thumb');">
-										<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand"/>
+										<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-preview" width="135" style="cursor: hand" />
 									</a>
 									<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
 								</div>
 							</td>
 						</tr>
 						<tr>
-							<th>发布时间</th>
+							<th><b>发布时间</b></th>
 						</tr>
 						<tr>
-							<td><input type="text" name="post[post_modified]" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime"></td>
+							<td><input type="text" name="post[post_date]" value="{:date('Y-m-d H:i:s',time())}" class="js-datetime" style="width: 160px;"></td>
 						</tr>
 						<tr>
-							<th>状态</th>
+							<th><b>状态</b></th>
 						</tr>
 						<tr>
 							<td>
@@ -80,12 +96,24 @@
 								<label class="radio"><input type="radio" name="post[post_status]" value="0">待审核</label>
 							</td>
 						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[istop]" value="1">置顶</label>
+								<label class="radio"><input type="radio" name="post[istop]" value="0" checked>未置顶</label>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label class="radio"><input type="radio" name="post[recommended]" value="1">推荐</label>
+								<label class="radio"><input type="radio" name="post[recommended]" value="0" checked>未推荐</label>
+							</td>
+						</tr>
 					</table>
 				</div>
 			</div>
 			<div class="form-actions">
-				<button class="btn btn-primary js-ajax-submit" type="submit">{:L('ADD')}</button>
-				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
+				<a class="btn" href="{:U('AdminMember/index')}">返回</a>
 			</div>
 		</form>
 	</div>
@@ -118,7 +146,9 @@
 				});
 			});
 			/////---------------------
-			Wind.use('validate','ajaxForm','artDialog',function() {
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+
 				//编辑器
 				editorcontent = new baidu.editor.ui.Editor({
 					allowDivTransToP: false,
@@ -129,28 +159,30 @@
 					initialFrameHeight:350
 				});
 				editorcontent.render('content');
-				try {
-					editorcontent.sync();
-				} catch (err) {}
-				//增加编辑器验证规则
-				jQuery.validator.addMethod('editorcontent',function() {
 					try {
 						editorcontent.sync();
-					} catch (err) {}
+					} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
 					return editorcontent.hasContents();
 				});
-
 				var form = $('form.js-ajax-forms');
 				//ie处理placeholder提交问题
 				if ($.browser && $.browser.msie) {
 					form.find('[placeholder]').each(function() {
 						var input = $(this);
-						if (input.val() == input
-								.attr('placeholder')) {
+						if (input.val() == input.attr('placeholder')) {
 							input.val('');
 						}
 					});
 				}
+
+				var formloading = false;
 				//表单验证开始
 				form.validate({
 					//是否在获取焦点时验证
@@ -160,7 +192,7 @@
 					//当鼠标掉级时验证
 					onclick : false,
 					//验证错误
-					showErrors : function(errorMap,errorArr) {
+					showErrors : function(errorMap, errorArr) {
 						//errorMap {'name':'错误信息'}
 						//errorArr [{'message':'错误信息',element:({})}]
 						try {
@@ -178,17 +210,26 @@
 									$(errorArr[0].element).focus();
 								}
 							});
-						} catch (err) {}
+						} catch (err) {
+						}
 					},
 					//验证规则
 					rules : {
-						'post[post_title]' : {required : 1},
-						'post[post_content]' : {editorcontent : true}
+						'post[post_title]' : {
+							required : 1
+						},
+						'post[post_content]' : {
+							editorcontent : true
+						}
 					},
 					//验证未通过提示消息
 					messages : {
-						'post[post_title]' : {required : '请输入标题'},
-						'post[post_content]' : {editorcontent : '内容不能为空'}
+						'post[post_title]' : {
+							required : '请输入会员卡名称'
+						},
+						'post[post_content]' : {
+							editorcontent : '会员卡介绍不能为空'
+						}
 					},
 					//给未通过验证的元素加效果,闪烁等
 					highlight : false,
@@ -196,17 +237,20 @@
 					onfocusout : false,
 					//验证通过，提交表单
 					submitHandler : function(forms) {
+						if (formloading)
+							return;
 						$(forms).ajaxSubmit({
 							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
 							dataType : 'json',
-							beforeSubmit : function(arr,$form,options) {
-
+							beforeSubmit : function(arr, $form, options) {
+								formloading = true;
 							},
-							success : function(data,statusText,xhr,$form) {
+							success : function(data, statusText, xhr, $form) {
+								formloading = false;
 								if (data.status) {
-									setCookie("refersh_time",1);
+									setCookie("refersh_time", 1);
 									//添加成功
-									Wind.use("artDialog",function() {
+									Wind.use("artDialog", function() {
 										art.dialog({
 											id : "succeed",
 											icon : "succeed",
@@ -215,34 +259,31 @@
 											background : "#CCCCCC",
 											opacity : 0,
 											content : data.info,
-											button : [
-											{
+											button : [ {
 												name : '继续添加？',
 												callback : function() {
 													reloadPage(window);
 													return true;
 												},
 												focus : true
-											},
-											{
-												name : '返回列表',
+											}, {
+												name : '返回列表页',
 												callback : function() {
-													location.href = "{:U('AdminPage/index')}";
+													location = "{:U('AdminMember/index')}";
 													return true;
 												}
-											}
-											]
+											} ]
 										});
 									});
 								} else {
-									alert(data.info);
+									artdialog_alert(data.info);
 								}
 							}
 						});
 					}
 				});
 			});
-		////-------------------------
+			////-------------------------
 		});
 	</script>
 </body>

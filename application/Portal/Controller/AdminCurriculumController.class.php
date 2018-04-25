@@ -10,15 +10,15 @@ namespace Portal\Controller;
 
 use Common\Controller\AdminbaseController;
 
-class AdminWorksController extends AdminbaseController {
+class AdminCurriculumController extends AdminbaseController {
 
-	protected $works_model;
+	protected $curriculum_model;
 	protected $term_relationships_model;
 	protected $terms_model;
 
 	function _initialize() {
 		parent::_initialize();
-		$this->works_model = D("Portal/Posts");
+		$this->curriculum_model = D("Portal/Posts");
 		$this->terms_model = D("Portal/Terms");
 		$this->term_relationships_model = D("Portal/TermRelationships");
 	}
@@ -44,9 +44,6 @@ class AdminWorksController extends AdminbaseController {
 	// 文章添加提交
 	public function add_post(){
 		if (IS_POST) {
-			if(empty($_POST['term'])){
-				$this->error("请至少选择一个分类！");
-			}
 			if(!empty($_POST['photos_alt']) && !empty($_POST['photos_url'])){
 				foreach ($_POST['photos_url'] as $key=>$url){
 					$photourl=sp_asset_relative_url($url);
@@ -60,12 +57,9 @@ class AdminWorksController extends AdminbaseController {
 			$article=I("post.post");
 			$article['smeta']=json_encode($_POST['smeta']);
 			$article['post_content']=htmlspecialchars_decode($article['post_content']);
-			$result=$this->works_model->add($article);
+			$result=$this->curriculum_model->add($article);
 			if ($result) {
-				foreach ($_POST['term'] as $mterm_id){
-					$this->term_relationships_model->add(array("term_id"=>intval($mterm_id),"object_id"=>$result));
-				}
-
+				$this->term_relationships_model->add(array("term_id"=>intval($_POST['term']),"object_id"=>$result));
 				$this->success("添加成功！");
 			} else {
 				$this->error("添加失败！");
@@ -77,13 +71,12 @@ class AdminWorksController extends AdminbaseController {
 	// 文章编辑
 	public function edit(){
 		$id=  I("get.id",0,'intval');
-
 		$term_relationship = M('TermRelationships')->where(array("object_id"=>$id,"status"=>1))->getField("term_id",true);
 		$this->_getTermTree($term_relationship);
 		$terms=$this->terms_model->where(array("taxonomy"=>"works"))->select();
-		$works=$this->works_model->where("id=$id")->find();
-		$this->assign("post",$works);
-		$this->assign("smeta",json_decode($works['smeta'],true));
+		$curriculum=$this->curriculum_model->where("id=$id")->find();
+		$this->assign("post",$curriculum);
+		$this->assign("smeta",json_decode($curriculum['smeta'],true));
 		$this->assign("terms",$terms);
 		$this->assign("term",$term_relationship);
 		$this->display();
@@ -92,34 +85,14 @@ class AdminWorksController extends AdminbaseController {
 	// 文章编辑提交
 	public function edit_post(){
 		if (IS_POST) {
-			if(empty($_POST['term'])){
-				$this->error("请至少选择一个分类！");
-			}
-			$works_id=intval($_POST['post']['id']);
-
-			$this->term_relationships_model->where(array("object_id"=>$works_id,"term_id"=>array("not in",implode(",", $_POST['term']))))->delete();
-			foreach ($_POST['term'] as $mterm_id){
-				$find_term_relationship=$this->term_relationships_model->where(array("object_id"=>$works_id,"term_id"=>$mterm_id))->count();
-				if(empty($find_term_relationship)){
-					$this->term_relationships_model->add(array("term_id"=>intval($mterm_id),"object_id"=>$works_id));
-				}else{
-					$this->term_relationships_model->where(array("object_id"=>$works_id,"term_id"=>$mterm_id))->save(array("status"=>1));
-				}
-			}
-
-			if(!empty($_POST['photos_alt']) && !empty($_POST['photos_url'])){
-				foreach ($_POST['photos_url'] as $key=>$url){
-					$photourl=sp_asset_relative_url($url);
-					$_POST['smeta']['photo'][]=array("url"=>$photourl,"alt"=>$_POST['photos_alt'][$key]);
-				}
-			}
+			$curriculum_id=intval($_POST['post']['id']);
 			$_POST['smeta']['thumb'] = sp_asset_relative_url($_POST['smeta']['thumb']);
 			unset($_POST['post']['post_author']);
 			$_POST['post']['post_modified']=date("Y-m-d H:i:s",time());
 			$article=I("post.post");
 			$article['smeta']=json_encode($_POST['smeta']);
 			$article['post_content']=htmlspecialchars_decode($article['post_content']);
-			$result=$this->works_model->save($article);
+			$result=$this->curriculum_model->save($article);
 			if ($result!==false) {
 				$this->success("保存成功！");
 			} else {
@@ -143,12 +116,12 @@ class AdminWorksController extends AdminbaseController {
 	 * @param array $where 查询条件
 	 */
 	private function _lists($where=array()){
-		$term_id=I('request.term',0,'intval');
+		$term_id=I('request.term',3,'intval');
 
 		$where['post_type']=array('eq',3);
 
 		if(!empty($term_id)){
-		    $where['b.term_id']=$term_id;
+		  $where['b.term_id']=$term_id;
 			$term=$this->terms_model->where(array("taxonomy"=>"works"))->where(array('term_id'=>$term_id))->find();
 			$this->assign("term",$term);
 		}
@@ -173,35 +146,35 @@ class AdminWorksController extends AdminbaseController {
 		    $where['post_title']=array('like',"%$keyword%");
 		}
 
-		$this->works_model
+		$this->curriculum_model
 		->alias("a")
 		->where($where);
 
 		if(!empty($term_id)){
-		    $this->works_model->join("__TERM_RELATIONSHIPS__ b ON a.id = b.object_id");
+		    $this->curriculum_model->join("__TERM_RELATIONSHIPS__ b ON a.id = b.object_id");
 		}
 
-		$count=$this->works_model->count();
+		$count=$this->curriculum_model->count();
 
 		$page = $this->page($count, 20);
 
-		$this->works_model
+		$this->curriculum_model
 		->alias("a")
 		->join("__USERS__ c ON a.post_author = c.id")
 		->where($where)
 		->limit($page->firstRow , $page->listRows)
 		->order("a.post_date DESC");
 		if(empty($term_id)){
-		    $this->works_model->field('a.*,c.user_login,c.user_nicename');
+		    $this->curriculum_model->field('a.*,c.user_login,c.user_nicename');
 		}else{
-		    $this->works_model->field('a.*,c.user_login,c.user_nicename,b.listorder,b.tid');
-		    $this->works_model->join("__TERM_RELATIONSHIPS__ b ON a.id = b.object_id");
+		    $this->curriculum_model->field('a.*,c.user_login,c.user_nicename,b.listorder,b.tid');
+		    $this->curriculum_model->join("__TERM_RELATIONSHIPS__ b ON a.id = b.object_id");
 		}
-		$works=$this->works_model->where(array('post_type'=>3))->select();
+		$curriculum=$this->curriculum_model->where(array('post_type'=>3))->select();
 
 		$this->assign("page", $page->show('Admin'));
 		$this->assign("formget",array_merge($_GET,$_POST));
-		$this->assign("posts",$works);
+		$this->assign("posts",$curriculum);
 	}
 
 	// 获取文章分类树结构 select 形式
@@ -256,7 +229,7 @@ class AdminWorksController extends AdminbaseController {
 	public function delete(){
 		if(isset($_GET['id'])){
 			$id = I("get.id",0,'intval');
-			if ($this->works_model->where(array('id'=>$id))->save(array('post_status'=>3)) !==false) {
+			if ($this->curriculum_model->where(array('id'=>$id))->save(array('post_status'=>3)) !==false) {
 				$this->success("删除成功！");
 			} else {
 				$this->error("删除失败！");
@@ -266,7 +239,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids'])){
 			$ids = I('post.ids/a');
 
-			if ($this->works_model->where(array('id'=>array('in',$ids)))->save(array('post_status'=>3))!==false) {
+			if ($this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('post_status'=>3))!==false) {
 				$this->success("删除成功！");
 			} else {
 				$this->error("删除失败！");
@@ -279,7 +252,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids']) && $_GET["check"]){
 		    $ids = I('post.ids/a');
 
-			if ( $this->works_model->where(array('id'=>array('in',$ids)))->save(array('post_status'=>1)) !== false ) {
+			if ( $this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('post_status'=>1)) !== false ) {
 				$this->success("审核成功！");
 			} else {
 				$this->error("审核失败！");
@@ -288,7 +261,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids']) && $_GET["uncheck"]){
 		    $ids = I('post.ids/a');
 
-			if ( $this->works_model->where(array('id'=>array('in',$ids)))->save(array('post_status'=>0)) !== false) {
+			if ( $this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('post_status'=>0)) !== false) {
 				$this->success("取消审核成功！");
 			} else {
 				$this->error("取消审核失败！");
@@ -301,7 +274,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids']) && $_GET["top"]){
 			$ids = I('post.ids/a');
 
-			if ( $this->works_model->where(array('id'=>array('in',$ids)))->save(array('istop'=>1))!==false) {
+			if ( $this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('istop'=>1))!==false) {
 				$this->success("置顶成功！");
 			} else {
 				$this->error("置顶失败！");
@@ -310,7 +283,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids']) && $_GET["untop"]){
 		    $ids = I('post.ids/a');
 
-			if ( $this->works_model->where(array('id'=>array('in',$ids)))->save(array('istop'=>0))!==false) {
+			if ( $this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('istop'=>0))!==false) {
 				$this->success("取消置顶成功！");
 			} else {
 				$this->error("取消置顶失败！");
@@ -323,7 +296,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids']) && $_GET["recommend"]){
 			$ids = I('post.ids/a');
 
-			if ( $this->works_model->where(array('id'=>array('in',$ids)))->save(array('recommended'=>1))!==false) {
+			if ( $this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('recommended'=>1))!==false) {
 				$this->success("推荐成功！");
 			} else {
 				$this->error("推荐失败！");
@@ -332,7 +305,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids']) && $_GET["unrecommend"]){
 		    $ids = I('post.ids/a');
 
-			if ( $this->works_model->where(array('id'=>array('in',$ids)))->save(array('recommended'=>0))!==false) {
+			if ( $this->curriculum_model->where(array('id'=>array('in',$ids)))->save(array('recommended'=>0))!==false) {
 				$this->success("取消推荐成功！");
 			} else {
 				$this->error("取消推荐失败！");
@@ -355,7 +328,7 @@ class AdminWorksController extends AdminbaseController {
 			            $find_relation_count=$this->term_relationships_model->where(array('object_id'=>$id,'term_id'=>$term_id))->count();
 			            if($find_relation_count==0){
 			                $this->term_relationships_model->add(array('object_id'=>$id,'term_id'=>$term_id));
-                      $this->works_model->save(array('id'=>$id,'post_type'=>1));
+                      $this->curriculum_model->save(array('id'=>$id,'post_type'=>1));
 			            }
 			        }
 
@@ -390,24 +363,24 @@ class AdminWorksController extends AdminbaseController {
 	            $ids=explode(',', I('get.ids/s'));
 	            $ids=array_map('intval', $ids);
 	            $uid=sp_get_current_admin_id();
-	            $term_id=I('post.term_id',0,'intval');
+	            $term_id=I('post.term_id',3,'intval');
 	            $term_count=$terms_model=M('Terms')->where(array("taxonomy"=>"works"))->where(array('term_id'=>$term_id))->count();
 	            if($term_count==0){
-	                $this->error('分类不存在！');
+	              $this->error('分类不存在！');
 	            }
 
 	            $data=array();
 
 	            foreach ($ids as $id){
-	                $find_works=$this->works_model->field('post_keywords,post_source,post_content,post_title,post_excerpt,smeta')->where(array('id'=>$id))->find();
-	                if($find_works){
-	                    $find_works['post_author']=$uid;
-                      $find_works['post_type']=3;
-	                    $find_works['post_date']=date('Y-m-d H:i:s');
-	                    $find_works['post_modified']=date('Y-m-d H:i:s');
-	                    $works_id=$this->works_model->add($find_works);
-	                    if($works_id>0){
-	                        array_push($data, array('object_id'=>$works_id,'term_id'=>$term_id));
+	                $find_curriculum=$this->curriculum_model->field('post_keywords,post_content,post_title,leixing,post_excerpt,smeta')->where(array('id'=>$id))->find();
+	                if($find_curriculum){
+	                    $find_curriculum['post_author']=$uid;
+                      $find_curriculum['post_type']=3;
+	                    $find_curriculum['post_date']=date('Y-m-d H:i:s');
+	                    $find_curriculum['post_modified']=date('Y-m-d H:i:s');
+	                    $curriculum_id=$this->curriculum_model->add($find_curriculum);
+	                    if($curriculum_id>0){
+	                      array_push($data, array('object_id'=>$curriculum_id,'term_id'=>$term_id));
 	                    }
 	                }
 	            }
@@ -422,7 +395,7 @@ class AdminWorksController extends AdminbaseController {
 	        $tree = new \Tree();
 	        $tree->icon = array('&nbsp;&nbsp;&nbsp;│ ', '&nbsp;&nbsp;&nbsp;├─ ', '&nbsp;&nbsp;&nbsp;└─ ');
 	        $tree->nbsp = '&nbsp;&nbsp;&nbsp;';
-	        $terms = $this->terms_model->where(array("taxonomy"=>"works"))->order(array("path"=>"ASC"))->select();
+	        $terms = $this->terms_model->where(array("taxonomy"=>"works"))->where(array('term_id'=>3))->order(array("path"=>"ASC"))->select();
 	        $new_terms=array();
 	        foreach ($terms as $r) {
 	            $r['id']=$r['term_id'];
@@ -450,7 +423,7 @@ class AdminWorksController extends AdminbaseController {
 		if(isset($_POST['ids'])){
 			$ids = I('post.ids/a');
 			$ids = array_map('intval', $ids);
-			$status=$this->works_model->where(array("id"=>array('in',$ids),'post_status'=>3))->delete();
+			$status=$this->curriculum_model->where(array("id"=>array('in',$ids),'post_status'=>3))->delete();
 			$this->term_relationships_model->where(array('object_id'=>array('in',$ids)))->delete();
 
 			if ($status!==false) {
@@ -461,7 +434,7 @@ class AdminWorksController extends AdminbaseController {
 		}else{
 			if(isset($_GET['id'])){
 				$id = I("get.id",0,'intval');
-				$status=$this->works_model->where(array("id"=>$id,'post_status'=>3))->delete();
+				$status=$this->curriculum_model->where(array("id"=>$id,'post_status'=>3))->delete();
 				$this->term_relationships_model->where(array('object_id'=>$id))->delete();
 
 				if ($status!==false) {
@@ -477,7 +450,7 @@ class AdminWorksController extends AdminbaseController {
 	public function restore(){
 		if(isset($_GET['id'])){
 			$id = I("get.id",0,'intval');
-			if ($this->works_model->where(array("id"=>$id,'post_status'=>3))->save(array("post_status"=>"1"))) {
+			if ($this->curriculum_model->where(array("id"=>$id,'post_status'=>3))->save(array("post_status"=>"1"))) {
 				$this->success("还原成功！");
 			} else {
 				$this->error("还原失败！");

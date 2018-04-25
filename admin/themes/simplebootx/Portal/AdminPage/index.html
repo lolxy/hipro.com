@@ -23,9 +23,8 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="100">ID</th>
-						<th>{:L('TITLE')}</th>
-						<!-- <th>点击量</th> -->
-						<th width="80">{:L('AUTHOR')}</th>
+						<th>页面标题</th>
+						<th width="80">发布人</th>
 						<th width="120"><span>{:L('POST_DATE')}</span></th>
 						<th width="120">{:L('ACTIONS')}</th>
 					</tr>
@@ -35,7 +34,6 @@
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}"></td>
 					<td><a>{$vo.id}</a></td>
 					<td><a href="{:U('portal/page/index',array('id'=>$vo['id']))}" target="_blank"><span>{$vo.post_title}</span></a></td>
-					<!--  <td>0</td> -->
 					<td>{$vo.user_nicename|default=$vo.user_login}</td>
 					<td>{$vo.post_date}</td>
 					<td>
@@ -48,9 +46,8 @@
 					<tr>
 						<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
 						<th width="100">ID</th>
-						<th>{:L('TITLE')}</th>
-						<!-- <th>点击量</th> -->
-						<th width="80">{:L('AUTHOR')}</th>
+						<th>页面标题</th>
+						<th width="80">发布人</th>
 						<th width="120"><span>{:L('POST_DATE')}</span></th>
 						<th width="120">{:L('ACTIONS')}</th>
 					</tr>

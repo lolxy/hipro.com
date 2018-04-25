@@ -33,9 +33,9 @@
 							</td>
 						</tr>
 						<tr>
-							<th>标题</th>
+							<th>新闻标题</th>
 							<td>
-								<input type="text" style="width:400px;" name="post[post_title]" id="title" required value="" placeholder="请输入标题"/>
+								<input type="text" style="width:400px;" name="post[post_title]" id="title" required value="" placeholder="请输入新闻标题"/>
 								<span class="form-required">*</span>
 							</td>
 						</tr>
@@ -48,24 +48,17 @@
 							<td><input type="text" name="post[post_source]" id="source" value="" style="width: 400px" placeholder="请输入文章来源"></td>
 						</tr>
 						<tr>
-							<th>摘要</th>
+							<th>新闻摘要</th>
 							<td>
-								<textarea name="post[post_excerpt]" id="description" style="width: 98%; height: 50px;" placeholder="请填写摘要"></textarea>
+								<textarea name="post[post_excerpt]" id="description" style="width: 98%; height: 50px;" placeholder="请填写新闻摘要"></textarea>
 							</td>
 						</tr>
 						<tr>
-							<th>内容</th>
+							<th>新闻内容</th>
 							<td>
 								<script type="text/plain" id="content" name="post[post_content]"></script>
 							</td>
 						</tr>
-						<!--<tr>
-							<th>相册图集</th>
-							<td>
-								<ul id="photos" class="pic-list unstyled"></ul>
-								<a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
-							</td>
-						</tr>-->
 					</table>
 				</div>
 				<div class="span3">
@@ -111,23 +104,6 @@
 								<label class="radio"><input type="radio" name="post[recommended]" value="0" checked>未推荐</label>
 							</td>
 						</tr>
-						<tr>
-							<th>文章模板</th>
-						</tr>
-						<tr>
-							<td>
-								<php>
-									$tpl_list=sp_admin_get_tpl_file_list();
-									unset($tpl_list['page']);
-								</php>
-								<select style="min-width: 190px;" name="smeta[template]">
-									<option value="">请选择模板</option>
-									<foreach name="tpl_list" item="vo">
-										<option value="{$vo}">{$vo}{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-									</foreach>
-								</select>
-							</td>
-						</tr>
 					</table>
 				</div>
 			</div>
@@ -170,11 +146,18 @@
 				//javascript
 
 				//编辑器
-				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent = new baidu.editor.ui.Editor({
+					allowDivTransToP: false,
+				  wordCount:false,
+				  elementPathEnabled:false,
+				  autoHeightEnabled:true,
+				  zIndex:14,
+initialFrameHeight:350
+				});
 				editorcontent.render('content');
-				try {
-					editorcontent.sync();
-				} catch (err) {
+					try {
+						editorcontent.sync();
+					} catch (err) {
 				}
 				//增加编辑器验证规则
 				jQuery.validator.addMethod('editorcontent', function() {

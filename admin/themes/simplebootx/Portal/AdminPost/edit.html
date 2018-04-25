@@ -34,10 +34,10 @@
 							</td>
 						</tr>
 						<tr>
-							<th>标题</th>
+							<th>新闻标题</th>
 							<td>
 								<input type="hidden" name="post[id]" value="{$post.id}">
-								<input type="text" style="width: 400px;" name="post[post_title]" required value="{$post.post_title}" placeholder="请输入标题"/>
+								<input type="text" style="width: 400px;" name="post[post_title]" required value="{$post.post_title}" placeholder="请输入新闻标题"/>
 								<span class="form-required">*</span>
 							</td>
 						</tr>
@@ -56,37 +56,17 @@
 							</td>
 						</tr>
 						<tr>
-							<th>摘要</th>
+							<th>新闻摘要</th>
 							<td>
-								<textarea name="post[post_excerpt]" style="width: 98%; height: 50px;" placeholder="请填写摘要">{$post.post_excerpt}</textarea>
+								<textarea name="post[post_excerpt]" style="width: 98%; height: 50px;" placeholder="请填写新闻摘要">{$post.post_excerpt}</textarea>
 							</td>
 						</tr>
 						<tr>
-							<th>内容</th>
+							<th>新闻内容</th>
 							<td>
 								<script type="text/plain" id="content" name="post[post_content]">{$post.post_content}</script>
 							</td>
 						</tr>
-						<!--<tr>
-							<th>相册图集</th>
-							<td>
-								<ul id="photos" class="pic-list unstyled">
-									<notempty name="smeta['photo']">
-										<foreach name="smeta['photo']" item="vo">
-										<php>$img_url=sp_get_image_preview_url($vo['url']);</php>
-										<li id="savedimage{$key}">
-											<input id="photo-{$key}" type="hidden" name="photos_url[]" value="{$img_url}">
-											<input id="photo-{$key}-name" type="text" name="photos_alt[]" value="{$vo.alt}" style="width: 200px;" title="图片名称">
-											<img id="photo-{$key}-preview" src="{:sp_get_image_preview_url($vo['url'])}" style="height:36px;width: 36px;" onclick="parent.image_preview_dialog(this.src);">
-											<a href="javascript:upload_one_image('图片上传','#photo-{$key}');">替换</a>
-											<a href="javascript:(function(){ $('#savedimage{$key}').remove();})();">移除</a>
-										</li>
-										</foreach>
-									</notempty>
-								</ul>
-								<a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
-							</td>
-						</tr>-->
 					</table>
 				</div>
 				<div class="span3">
@@ -116,13 +96,6 @@
 							<td><input type="text" name="post[post_date]" value="{$post.post_date}" class="js-datetime" style="width: 160px;"></td>
 						</tr>
 						<tr>
-							<th>评论</th>
-						</tr>
-						<tr>
-							<td><label style="width: 88px"><a href="javascript:open_iframe_dialog('{:U('comment/commentadmin/index',array('post_id'=>$post['id']))}','评论列表')">查看评论</a></label>
-							</td>
-						</tr>
-						<tr>
 							<th>状态</th>
 						</tr>
 						<tr>
@@ -149,24 +122,6 @@
 							<td>
 								<label class="radio"><input type="radio" name="post[recommended]" value="1" {$recommended_yes}>推荐</label>
 								<label class="radio"><input type="radio" name="post[recommended]" value="0" {$recommended_no}>未推荐</label>
-							</td>
-						</tr>
-						<tr>
-							<th>文章模板</th>
-						</tr>
-						<tr>
-							<td>
-								<php>
-									$tpl_list=sp_admin_get_tpl_file_list();
-									unset($tpl_list['page']);
-								</php>
-								<select style="min-width: 190px;" name="smeta[template]">
-									<option value="">请选择模板</option>
-									<foreach name="tpl_list" item="vo">
-										<php>$template_selected=$smeta['template']==$vo?"selected":"";</php>
-										<option value="{$vo}"{$template_selected}>{$vo}{:C("TMPL_TEMPLATE_SUFFIX")}</option>
-									</foreach>
-								</select>
 							</td>
 						</tr>
 					</table>
@@ -213,7 +168,14 @@
 				//javascript
 
 				//编辑器
-				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent = new baidu.editor.ui.Editor({
+					allowDivTransToP: false,
+				  wordCount:false,
+				  elementPathEnabled:false,
+				  autoHeightEnabled:true,
+				  zIndex:14,
+					initialFrameHeight:350
+				});
 				editorcontent.render('content');
 				try {
 					editorcontent.sync();
