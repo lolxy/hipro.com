@@ -10,42 +10,20 @@
 <tc_include file="Public:nav" />
 
 <section class="wrapper">
-  <div class="newslist-container">
-  <php>
-	$topPosts=sp_sql_posts("cid:$cat_id;field:object_id,term_id,post_title,post_excerpt,post_content,post_modified,smeta;order:listorder asc,post_modified desc;limit:1",array('istop'=>'1'));
-</php>
-
-    <volist name="topPosts" id="vo">
-    <php>
-        $smeta=json_decode($vo['smeta'], true);
-    </php>
-    <div class="recommend">
-      <div class="left-photo">
-      <if condition="empty($smeta['thumb'])">
-           <a href="{:leuu('Portal/article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" style="background-image:url(__TMPL__Public/assets/images/default_tupian1.png)"></a>
-        <else />
-            <a href="{:leuu('Portal/article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" style="background-image:url({:sp_get_asset_upload_path($smeta['thumb'])})"></a>
-        </if>
-      </div>
-      <div class="right-content">
-        <h2 class="text-ellipsis2"><a href="{:leuu('Portal/article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h2>
-        <p class="text-ellipsis3">{$vo.post_excerpt}</p>
-        <div class="pfoot">
-          <span>{$vo.post_modified}</span>
-          <a href="#">详细 ></a>
-        </div>
-      </div>
-    </div>
-    </volist>
+  <div class="newslist-container curriculum-wrap">
 
 		<?php
 		    $cid = $cat_id;
-		    $tag = "cid:$cid;order:listorder asc,post_modified desc;";
+		    $tag = "order:listorder asc,post_modified desc;";
 		    $pagesize = '5';
-		    $content=sp_sql_posts_paged($tag,$pagesize);
+		    $content=sp_sql_posts_paged_bycatid($cid,$tag,$pagesize);
 		    $lists = $content['posts'];
 		    $pager=$content['page'];
 		?>
+
+		<div class="main-tit">
+			<span>新闻中心</span>
+		</div>
 
 		<notempty name="lists">
     <div class="news-list">
@@ -55,27 +33,22 @@
 				$smeta=json_decode($vos['smeta'], true);
 			</php>
         <li>
-          <div class="newbox">
-            <div class="left-photo">
-              <if condition="empty($smeta['thumb'])">
-                   <a href="{:leuu('Portal/article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}" style="background-image:url(__TMPL__Public/assets/images/default_tupian1.png)"></a>
-                <else />
-                    <a href="{:leuu('Portal/article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}" style="background-image:url({:sp_get_asset_upload_path($smeta['thumb'])})"></a>
-                </if>
+          <a href="{:leuu('Portal/article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}">
+						<if condition="empty($smeta['thumb'])">
+               <img src="__TMPL__Public/assets/images/default_tupian1.png" alt="">
+            <else />
+                <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" alt="">
+           	</if>
+          	<div class="content">
+            	<h2 class="text-ellipsis">{$vos.post_title}</h2>
+           		<p>{$vos.post_excerpt}</p>
+							<div class="more">详情</div>
             </div>
-            <div class="right-content">
-              <h2 class="text-ellipsis"><a href="{:leuu('article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}">{$vos.post_title}</a></h2>
-              <p class="text-ellipsis3">{$vos.post_excerpt}</p>
-              <div class="pfoot">
-                <span>{$vos.post_modified}</span>
-                <a href="{:leuu('article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}">详细 ></a>
-              </div>
-            </div>
-          </div>
+          </a>
         </li>
         </volist>
       </ul>
-      <div class="more">更多资讯</div>
+			<div class="morebox"><div class="more">更多资讯</div></div>
     </div>
 		<else/>
 			<div class="nomore">-- 没有更多数据 --</div>
