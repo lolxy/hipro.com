@@ -1,24 +1,25 @@
 {:hook('body_start')}
 <!-- 头部公共部分 -->
 <header id="header">
-	<div class="h-head">
+	<div class="logo">
 		<a href="/">
-			<img src="__PUBLIC__/images/logo.png" alt="" class="logo"/>
+			<img src="__PUBLIC__/images/logo.png" alt=""/>
 		</a>
 	</div>
-	<div class="menubox">
-		<a href="javascript:void(0);" class="menus"></a>
+	<div class="navlist">
+		<?php
+					$effected_id="";
+					$filetpl="<a href='\$href' target='\$target'>\$label</a>";
+					$foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <span class='caret'></span></a>";
+					$ul_class="dropdown-menu" ;
+					$li_class="" ;
+					$style="";
+					$showlevel=2;
+					$dropdown='dropdown';
+					echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+			?>
 	</div>
-	<nav class="navlist">
-		<ul>
-			<li><a href="{:leuu('Portal/list/index',array('id'=>3))}">CLESSES ,课程</a></li>
-			<li><a href="{:leuu('Portal/list/index',array('id'=>4))}">VIP CULB ,会员</a></li>
-			<li><a href="{:leuu('Portal/list/index',array('id'=>6))}">COACH ,教练</a></li>
-			<li><a href="{:leuu('Portal/list/index',array('id'=>2))}">NEWS ,新闻中心</a></li>
-			<li><a href="{:leuu('Portal/list/index',array('id'=>5))}">HISHOP ,商城</a></li>
-			<li><a href="{:leuu('Portal/page/index',array('id'=>1))}">ABOUT ,关于我们</a></li>
-			<li><a href="{:leuu('Portal/page/index',array('id'=>2))}">CONNECTION ,联系我们</a></li>
-		</ul>
-		<div class="close">&times;</div>
-	</nav>
+	<div class="aboutus">
+		
+	</div>
 </header>

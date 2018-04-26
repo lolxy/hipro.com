@@ -11,16 +11,16 @@
 			.body-hide{opacity:0;}
 			.wrapper{position: relative;z-index: 2;background-color:#d4d4dc;}
 			.swiper-slide img{width:100%;}
-			.swiper-pagination-bullet{background: #ffffff;}
-			.swiper-pagination-bullet-active{background: #0b090a;}
+			.swiper-container-horizontal>.swiper-pagination-bullets{bottom: 47px;}
+			.swiper-pagination-bullet{background: rgba(255,255,255,.6);border-radius: 3px;width: 26px;height: 4px;}
+			.swiper-pagination-bullet-active{background: #ffffff;}
 		</style>
 	</head>
 <body class="body-hide">
 <tc_include file="Public:nav" />
 
-<div class="instruction-contain"></div>
 <php>
-$home_slides=sp_getslide("index_ads");
+$home_slides=sp_getslide("pc_index_slide");
 </php>
 <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -34,24 +34,6 @@ $home_slides=sp_getslide("index_ads");
     <div class="swiper-pagination"></div>
 </div>
 
-<php>
-$case_slides=sp_getslide("index_category_list");
-</php>
-<section class="wrapper">
-<!-- 其他主图 -->
-<div class="workslist">
-  <ul>
-  <foreach name="case_slides" item="vo" key="k">
-    <li>
-      <a href="{$vo['slide_url']}">
-        <img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="{$vo['slide_name']}" class="img-responsive"/>
-      </a>
-    </li>
-    </foreach>
-  </ul>
-</div>
-
-</section>
 <tc_include file="Public:scripts"/>
 <script>
   var mySwiper = new Swiper ('.swiper-container', {
@@ -61,11 +43,6 @@ $case_slides=sp_getslide("index_category_list");
 		paginationClickable: true,
 		autoHeight:true
   	})
-  
-	$(".instruction-contain").addClass("get-in");
-	setTimeout(function() {
-		$(".instruction-contain").addClass("end-hide");
-	},2000);
 	$("body").removeClass("body-hide");
   </script>
 {:hook('footer_end')}

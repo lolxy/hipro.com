@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-26 21:40:53
+Date: 2018-04-26 22:39:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -663,7 +663,7 @@ CREATE TABLE `hi_options` (
 -- Records of hi_options
 -- ----------------------------
 INSERT INTO `hi_options` VALUES ('1', 'member_email_active', '{\"title\":\"ThinkCMF\\u90ae\\u4ef6\\u6fc0\\u6d3b\\u901a\\u77e5.\",\"template\":\"<p>\\u672c\\u90ae\\u4ef6\\u6765\\u81ea<a href=\\\"http:\\/\\/www.thinkcmf.com\\\">ThinkCMF<\\/a><br\\/><br\\/>&nbsp; &nbsp;<strong>---------------<strong style=\\\"white-space: normal;\\\">---<\\/strong><\\/strong><br\\/>&nbsp; &nbsp;<strong>\\u5e10\\u53f7\\u6fc0\\u6d3b\\u8bf4\\u660e<\\/strong><br\\/>&nbsp; &nbsp;<strong>---------------<strong style=\\\"white-space: normal;\\\">---<\\/strong><\\/strong><br\\/><br\\/>&nbsp; &nbsp; \\u5c0a\\u656c\\u7684<span style=\\\"FONT-SIZE: 16px; FONT-FAMILY: Arial; COLOR: rgb(51,51,51); LINE-HEIGHT: 18px; BACKGROUND-COLOR: rgb(255,255,255)\\\">#username#\\uff0c\\u60a8\\u597d\\u3002<\\/span>\\u5982\\u679c\\u60a8\\u662fThinkCMF\\u7684\\u65b0\\u7528\\u6237\\uff0c\\u6216\\u5728\\u4fee\\u6539\\u60a8\\u7684\\u6ce8\\u518cEmail\\u65f6\\u4f7f\\u7528\\u4e86\\u672c\\u5730\\u5740\\uff0c\\u6211\\u4eec\\u9700\\u8981\\u5bf9\\u60a8\\u7684\\u5730\\u5740\\u6709\\u6548\\u6027\\u8fdb\\u884c\\u9a8c\\u8bc1\\u4ee5\\u907f\\u514d\\u5783\\u573e\\u90ae\\u4ef6\\u6216\\u5730\\u5740\\u88ab\\u6ee5\\u7528\\u3002<br\\/>&nbsp; &nbsp; \\u60a8\\u53ea\\u9700\\u70b9\\u51fb\\u4e0b\\u9762\\u7684\\u94fe\\u63a5\\u5373\\u53ef\\u6fc0\\u6d3b\\u60a8\\u7684\\u5e10\\u53f7\\uff1a<br\\/>&nbsp; &nbsp; <a title=\\\"\\\" href=\\\"http:\\/\\/#link#\\\" target=\\\"_self\\\">http:\\/\\/#link#<\\/a><br\\/>&nbsp; &nbsp; (\\u5982\\u679c\\u4e0a\\u9762\\u4e0d\\u662f\\u94fe\\u63a5\\u5f62\\u5f0f\\uff0c\\u8bf7\\u5c06\\u8be5\\u5730\\u5740\\u624b\\u5de5\\u7c98\\u8d34\\u5230\\u6d4f\\u89c8\\u5668\\u5730\\u5740\\u680f\\u518d\\u8bbf\\u95ee)<br\\/>&nbsp; &nbsp; \\u611f\\u8c22\\u60a8\\u7684\\u8bbf\\u95ee\\uff0c\\u795d\\u60a8\\u4f7f\\u7528\\u6109\\u5feb\\uff01<br\\/><br\\/>&nbsp; &nbsp; \\u6b64\\u81f4<br\\/>&nbsp; &nbsp; ThinkCMF \\u7ba1\\u7406\\u56e2\\u961f.<\\/p>\"}', '1');
-INSERT INTO `hi_options` VALUES ('6', 'site_options', '{\"site_name\":\"HIPRO\",\"site_host\":\"http:\\/\\/www.hipro.com\\/\",\"site_logo\":\"admin\\/20180424\\/5adf47a266d0f.png\",\"site_erweima\":\"\",\"site_admin_url_password\":\"\",\"site_tpl\":\"hipro\",\"mobile_tpl_enabled\":\"1\",\"site_adminstyle\":\"flat\",\"site_icp\":\"\\u95fdICP\\u590717031739\\u53f7\",\"site_admin_email\":\"admin@qq.com\",\"site_tongji\":\"\",\"site_copyright\":\"Copyright \\u00a92018-2019 hipro Corporation, All Rights Reserved\",\"site_seo_title\":\"\",\"site_seo_keywords\":\"\",\"site_seo_description\":\"\",\"urlmode\":\"2\",\"html_suffix\":\"html\",\"comment_time_interval\":\"60\"}', '1');
+INSERT INTO `hi_options` VALUES ('6', 'site_options', '{\"site_name\":\"HIPRO\",\"site_host\":\"http:\\/\\/www.hipro.com\\/\",\"site_logo\":\"admin\\/20180424\\/5adf47a266d0f.png\",\"site_erweima\":\"admin\\/20180426\\/5ae1dafca5966.png\",\"site_admin_url_password\":\"\",\"site_tpl\":\"hipro\",\"mobile_tpl_enabled\":\"1\",\"site_adminstyle\":\"flat\",\"site_icp\":\"\\u95fdICP\\u590717031739\\u53f7\",\"site_admin_email\":\"admin@qq.com\",\"site_tongji\":\"\",\"site_copyright\":\"Copyright \\u00a92018-2019 hipro Corporation, All Rights Reserved\",\"site_seo_title\":\"\",\"site_seo_keywords\":\"\",\"site_seo_description\":\"\",\"urlmode\":\"2\",\"html_suffix\":\"html\",\"comment_time_interval\":\"60\"}', '1');
 INSERT INTO `hi_options` VALUES ('7', 'cmf_settings', '{\"banned_usernames\":\"\"}', '1');
 INSERT INTO `hi_options` VALUES ('8', 'cdn_settings', '{\"cdn_static_root\":\"\"}', '1');
 
@@ -730,7 +730,7 @@ CREATE TABLE `hi_posts` (
 -- ----------------------------
 -- Records of hi_posts
 -- ----------------------------
-INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43:40', '<div class=\"about-container\"><div class=\"about-wrap\"><div class=\"main-tit\"><p>关于我们</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>关于HIPRO</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div></div><div class=\"about-wrap\"><div class=\"main-tit\"><p>空间</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>有氧运动区</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>固定器械区</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div></div><div class=\"about-wrap\"><div class=\"main-tit\"><p>设备</p></div><div class=\"content\"><h3>跑步机</h3><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h3>跑步机</h3><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div></div></div>', null, null, '关于我们', '关于我们', '1', '1', '2018-04-24 22:43:29', null, '0', '2', '', '0', '{\"template\":\"page\",\"thumb\":\"\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43:40', '<div class=\"about-container\"><div class=\"about-wrap\"><div class=\"main-tit\"><p>关于我们</p></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>关于HIPRO</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div></div><div class=\"about-wrap\"><div class=\"main-tit\"><p>空间</p></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>有氧运动区</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>固定器械区</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div></div><div class=\"about-wrap\"><div class=\"main-tit\"><p>设备</p></div><div class=\"content\"><h3>跑步机</h3><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h3>跑步机</h3><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div></div></div>', null, null, '关于我们', '关于我们', '1', '1', '2018-04-24 22:43:29', null, '0', '2', '', '0', '{\"template\":\"page\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('2', '1', '联系我们', null, '2018-04-24 22:43:53', '', null, null, '联系我们', '联系我们', '1', '1', '2018-04-24 22:43:43', null, '0', '2', '', '0', '{\"template\":\"contact\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('3', '1', '地图导航', null, '2018-04-24 22:44:17', '', null, null, '地图导航', '地图导航', '1', '1', '2018-04-24 22:43:54', null, '0', '2', '', '0', '{\"template\":\"map\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('4', '1', '', null, '2018-04-25 15:02:19', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:31:48', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '2', '0', '0', '0');
@@ -833,7 +833,7 @@ CREATE TABLE `hi_slide` (
   `listorder` int(10) DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`slide_id`),
   KEY `slide_cid` (`slide_cid`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_slide
@@ -842,6 +842,7 @@ INSERT INTO `hi_slide` VALUES ('1', '1', '首页轮播图1', 'admin/20180126/5a6
 INSERT INTO `hi_slide` VALUES ('2', '2', '联系我们', 'admin/20180227/5a95112e94578.png', '', '', '', '1', '0');
 INSERT INTO `hi_slide` VALUES ('3', '3', '会员', 'admin/20180423/5addd8a1880ff.png', './index.php?g=portal&amp;m=list&amp;a=index&amp;id=4', '', '', '1', '0');
 INSERT INTO `hi_slide` VALUES ('4', '3', '课程', 'admin/20180423/5addd8b729daf.png', './index.php?g=portal&amp;m=list&amp;a=index&amp;id=5', '', '', '1', '0');
+INSERT INTO `hi_slide` VALUES ('5', '4', '1', 'admin/20180426/5ae1e29f9a434.png', '', '', '', '1', '0');
 
 -- ----------------------------
 -- Table structure for `hi_slide_cat`
@@ -855,7 +856,7 @@ CREATE TABLE `hi_slide_cat` (
   `cat_status` int(2) NOT NULL DEFAULT '1' COMMENT '状态，1显示，0不显示',
   PRIMARY KEY (`cid`),
   KEY `cat_idname` (`cat_idname`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_slide_cat
@@ -863,6 +864,7 @@ CREATE TABLE `hi_slide_cat` (
 INSERT INTO `hi_slide_cat` VALUES ('1', '首页banner轮播图', 'index_ads', '首页banner轮播图', '1');
 INSERT INTO `hi_slide_cat` VALUES ('2', '联系我们顶部广告位', 'contact_ads', '联系我们顶部广告位', '1');
 INSERT INTO `hi_slide_cat` VALUES ('3', '首页分类主图列表', 'index_category_list', '首页分类主图列表', '1');
+INSERT INTO `hi_slide_cat` VALUES ('4', 'PC端首页轮播图', 'pc_index_slide', '', '1');
 
 -- ----------------------------
 -- Table structure for `hi_terms`
