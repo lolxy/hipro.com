@@ -20,7 +20,6 @@ header .searchbox .search{ background: url(../images/search_icon.png) center cen
 header .menubox{ right: 0.8rem; z-index: 5;top: 2.5rem;position: fixed;background: #898989;text-align: center;transition:all ease-in-out 0.6s;}
 header .menubox:hover{background: #999999;}
 header .menubox .menus{ background: url(../images/menu_icon.png) center center no-repeat; background-size: cover; }
-
 .navlist{position:fixed;left:50%;width: 90%;top: 2.6rem;z-index:-1;margin-left: -45%;background-color: #727071;padding: 10px 20px;box-sizing:border-box;overflow: hidden;transition:all ease-in-out 0.8s;opacity:0; transform:translate(0,-100%);}
 .navlist.showNav{z-index:5;opacity:1;transform:translate(0,0);}
 .navlist li{margin-bottom: 0.18rem;line-height: 1rem;}
@@ -30,15 +29,6 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .index-welcome-container { position: fixed; top: 1.1112rem; left: 0; z-index: 1; width: 100%; height: 33.3333333vh; background-repeat: no-repeat; background-position: center; background-size: cover; -webkit-overflow-scrolling: touch; -webkit-transform: translateZ(0); transform: translateZ(0); }
 .index-welcome-container .black-mask { position: absolute; z-index: 1; width: 100%; height: 100%; background-color: #000000; opacity: .1; }
 .scroll-mask-index { position: relative; z-index: -1; width: 1px; height: 33.3333333vh; padding-top: 33.3333333vh; background-color: transparent; -webkit-overflow-scrolling: touch; -webkit-transform: translateZ(0); transform: translateZ(0); }
-/* 新闻轮播 */
-.mainbox .newsbox{height: 2.45rem;}
-.mainbox .newsbox a{display: block;width: 100%;height: 100%;background-size: cover;position: relative;color:#ffffff;}
-.mainbox .newsbox .title{position: absolute;width: 100%;background:rgba(0,0,0,.8);bottom: 0;left: 0;height: .56rem;line-height: 0.56rem;overflow: hidden;}
-.mainbox .newsbox .title p{width: 50%;float: left;padding-left: 5px;box-sizing: border-box;}
-.mainbox .newsbox .title span{width: 50%;float: right;text-align: right;padding-right: 5px;box-sizing: border-box;}
-.mainbox .h-title{height: 1rem;line-height: 0.8rem;text-align: center;color:#1d1e22;font-size: 12px;text-decoration: none;}
-.swiper-slide-next .mainbox .h-title{font-weight: bold;font-size: 15px;line-height: 1rem;}
-
 /* 资讯列表 */
 .newslist-container,.wrapper{overflow: hidden;}
 .newslist-container .news-list li{padding-top: 15px;background-color: #fff;}
@@ -58,13 +48,6 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 /* 单页样式 */
 .page-wrapper{padding: 0.267rem;background-color: #fff;margin-bottom: 10px;}
 .page-wrapper img{width:100%;vertical-align: bottom;}
-/*搜索页*/
-.search-wrapper{margin-bottom: 10px;padding:0px;}
-.search-wrapper .news-list{background:none;padding:0px;}
-.search-wrapper .news-list li{background:#ffffff;padding:10px;margin-bottom:10px;}
-.search-wrapper .main-title{height:40px;line-height:40px;overflow:hidden;padding:0px 10px;}
-.search-wrapper .main-title h3{float:left;line-height:40px;font-size:13px;}
-.search-wrapper .main-title p{float:right;line-height:45px;font-size:12px;}
 /*分页*/
 .pagination{display:block;text-align:center;overflow:hidden;}
 .pagination ul{display:inline-block;overflow:hidden;}
@@ -81,10 +64,6 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .mt40{margin-top: 0.6rem;}
 .main-box .box{margin-top: 1rem;}
 .main-box .box h2{width: 58%;background-color: #000;color:#ffffff;line-height: .5556rem;font-size: 0.3333rem;margin: 0 auto;text-align: center;margin-bottom: .6667rem;font-family: fzlthft;}
-
-.s-header,.s-header p{font-family: fzlthft;}
-.s-header p{margin-top: 10px;font-weight: bold;}
-
 /* 教练 */
 .cocah-wrap{padding-top:1rem;padding-bottom:.4rem;background-color: #fff;}
 .main-tit{text-align: center;}

@@ -5,15 +5,6 @@ header .logo{width: 350px;padding: 20px;text-align: center;}
 header .logo img{width: 260px;height: auto;}
 header .aboutus{width: 135px;}
 header .navlist{flex:1;margin: 0 20px;}
-/* 新闻轮播 */
-.mainbox .newsbox{height: 2.45rem;}
-.mainbox .newsbox a{display: block;width: 100%;height: 100%;background-size: cover;position: relative;color:#ffffff;}
-.mainbox .newsbox .title{position: absolute;width: 100%;background:rgba(0,0,0,.8);bottom: 0;left: 0;height: .56rem;line-height: 0.56rem;overflow: hidden;}
-.mainbox .newsbox .title p{width: 50%;float: left;padding-left: 5px;box-sizing: border-box;}
-.mainbox .newsbox .title span{width: 50%;float: right;text-align: right;padding-right: 5px;box-sizing: border-box;}
-.mainbox .h-title{height: 1rem;line-height: 0.8rem;text-align: center;color:#1d1e22;font-size: 12px;text-decoration: none;}
-.swiper-slide-next .mainbox .h-title{font-weight: bold;font-size: 15px;line-height: 1rem;}
-
 /* 资讯列表 */
 .newslist-container,.wrapper{overflow: hidden;}
 .newslist-container .news-list li{padding-top: 15px;background-color: #fff;}
@@ -33,13 +24,6 @@ header .navlist{flex:1;margin: 0 20px;}
 /* 单页样式 */
 .page-wrapper{padding: 0.267rem;background-color: #fff;margin-bottom: 10px;}
 .page-wrapper img{width:100%;vertical-align: bottom;}
-/*搜索页*/
-.search-wrapper{margin-bottom: 10px;padding:0px;}
-.search-wrapper .news-list{background:none;padding:0px;}
-.search-wrapper .news-list li{background:#ffffff;padding:10px;margin-bottom:10px;}
-.search-wrapper .main-title{height:40px;line-height:40px;overflow:hidden;padding:0px 10px;}
-.search-wrapper .main-title h3{float:left;line-height:40px;font-size:13px;}
-.search-wrapper .main-title p{float:right;line-height:45px;font-size:12px;}
 /*分页*/
 .pagination{display:block;text-align:center;overflow:hidden;}
 .pagination ul{display:inline-block;overflow:hidden;}
@@ -56,10 +40,6 @@ header .navlist{flex:1;margin: 0 20px;}
 .mt40{margin-top: 0.6rem;}
 .main-box .box{margin-top: 1rem;}
 .main-box .box h2{width: 58%;background-color: #000;color:#ffffff;line-height: .5556rem;font-size: 0.3333rem;margin: 0 auto;text-align: center;margin-bottom: .6667rem;font-family: fzlthft;}
-
-.s-header,.s-header p{font-family: fzlthft;}
-.s-header p{margin-top: 10px;font-weight: bold;}
-
 /* 教练 */
 .cocah-wrap{padding-top:1rem;padding-bottom:.4rem;background-color: #fff;}
 .main-tit{text-align: center;}
