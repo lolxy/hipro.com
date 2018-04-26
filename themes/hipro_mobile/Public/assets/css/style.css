@@ -42,25 +42,7 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .mainbox .newsbox .title span{width: 50%;float: right;text-align: right;padding-right: 5px;box-sizing: border-box;}
 .mainbox .h-title{height: 1rem;line-height: 0.8rem;text-align: center;color:#1d1e22;font-size: 12px;text-decoration: none;}
 .swiper-slide-next .mainbox .h-title{font-weight: bold;font-size: 15px;line-height: 1rem;}
-/* 联系我们 */
-.about-container{background-color: #fff;padding: 10px;overflow: hidden;}
-.about-container .main-img-box{width: 100%;overflow: hidden;margin-bottom: 10px;}
-.about-container .main-img-box img{width: 100%;}
-.about-container p{font-size: 13px;color:#1d1e22;line-height: 24px;font-weight: 500;text-indent: 2em;}
-.honor-container{background-color: #fff;margin-top: 10px;overflow: hidden;}
-.honor-container h2{height: 40px;line-height: 40px;}
-.honor-container h2 a{font-weight: bold;color:#1d1e22;font-size: 14px;text-align: center;display: block;height: 100%;width: 100%;}
-.honor-container .swiper-box{padding-bottom: 10px;}
-.honor-container .mainbox .h-title{height: auto;line-height: 0.54rem;font-weight: 400;text-align: center;}
-.honor-container .swiper-slide-next .mainbox .h-title{font-weight: 400;font-size: 12px;}
-.contact-container{padding: 10px;text-align: center;background-color: #fff;margin-top: 10px;}
-.contact-container dl{margin-bottom: 10px;}
-.contact-container dt{line-height: 28px;color:#1d1e22;font-size: 13px;font-weight: bold;}
-.contact-container dd{line-height: 24px;}
-.contact-container dd span{margin-right:20px;}
-.contact-container dd p{font-size: 13px;color:#898989;}
-.contact-container dd .ewmbox{width: 2.6rem;height: 2.6rem;margin:5px auto;}
-.contact-container dt,.contact-container dd{color:#1d1e22;font-size: 14px;}
+
 /* 资讯列表 */
 .newslist-container,.wrapper{overflow: hidden;}
 .newslist-container .news-list li{padding-top: 15px;background-color: #fff;}
@@ -77,13 +59,6 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .detail-body p{padding: 0rem 1.3rem !important;line-height: 0.6rem !important;overflow: hidden !important;}
 .detail-body p.imgbox{padding: 0 !important;margin: 0 !important;}
 .detail-container .detail-body img{max-width:100% !important;width:100% !important;vertical-align:bottom !important;height: auto !important;}
-/*相册*/
-.images-container{background:#ffffff;margin-top:10px;padding:5px;margin-bottom:10px;}
-.images-container figcaption{line-height: 30px;text-align: center;overflow: hidden;white-space:nowrap; word-wrap:break-word; word-break:break-all;text-overflow:ellipsis;}
-.images-container h3{font-size:16px;line-height:40px;padding-left:10px;}
-.images-container figure{padding:5px;}
-.images-container figure .case_con{height:0px;width:100%;display:block;padding-bottom:100%;background-color:#f8f8f9;overflow:hidden;}
-.images-container .row{margin:0px;}
 /* 单页样式 */
 .page-wrapper{padding: 0.267rem;background-color: #fff;margin-bottom: 10px;}
 .page-wrapper img{width:100%;vertical-align: bottom;}
@@ -105,25 +80,11 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .error-container{padding: 0.267rem;}
 .error-container p{display: block;text-align: center;font-size:24px;line-height: 50vh;font-weight: bold;color:#1d1e22;}
 /*关于我们*/
-.main-box,.about-jieshao{padding:0 1rem;font-family: fzlthft;}
-.main-box p,.about-jieshao p{font-family: fzlthft;font-size:.3889rem;line-height: .55rem;color:#000000;font-weight: 500;}
-.main-box p{text-align: center;}
-.about-photo img{vertical-align: top;width:100%}
-.about-photo b{padding: 0.33rem;text-align: center;font-weight: bold;font-size:14px;display:block;}
+.main-box{padding:0 1rem;font-family: fzlthft;}
+.main-box p{text-align: center;font-family: fzlthft;font-size:.3889rem;line-height: .55rem;color:#000000;font-weight: 500;}
 .mt40{margin-top: 0.6rem;}
-.main-box .box,.about-jieshao{margin-top: 1rem;}
+.main-box .box{margin-top: 1rem;}
 .main-box .box h2{width: 58%;background-color: #000;color:#ffffff;line-height: .5556rem;font-size: 0.3333rem;margin: 0 auto;text-align: center;margin-bottom: .6667rem;font-family: fzlthft;}
-.about-jieshao .a-photo{padding-top: 15px;}
-.about-jieshao .js-box{display:flex;height: 5rem;}
-.about-jieshao .js-box .a-header{flex:1;display:flex;height: 100%; flex-direction:column; justify-content:space-between}
-.about-jieshao .js-box .a-header .a-top{flex:1;display:flex;flex-direction:column; justify-content:space-between}
-.about-jieshao .js-box .a-header .a-top p{font-size: 18px;}
-.about-jieshao .js-box .a-header .a-top h2{font-size: 24px;margin-bottom: 0.4rem;color:#919191;font-weight: bold;}
-.about-jieshao .js-box .a-header .a-top h3{font-size: 14px;color:#919191;font-weight: bold;}
-.about-jieshao .js-box .a-header .a-bottom{margin-top: 0.65rem;}
-.about-jieshao .js-box .a-header .a-bottom p{font-size: 12px;line-height: 20px;}
-.about-jieshao .js-box .a-photo{width: 3rem;margin-left: 10px;}
-.js-content .p1,.js-content .p2,.about-jieshao .js-box{margin-bottom: 0.65rem;}
 
 .s-header,.s-header p{font-family: fzlthft;}
 .s-header p{margin-top: 10px;font-weight: bold;}
@@ -131,7 +92,7 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 /* 教练 */
 .cocah-wrap{padding-top:1rem;padding-bottom:.4rem;background-color: #fff;}
 .main-tit{text-align: center;}
-.main-tit span{display: inline-block;padding: 0 .4rem;font-family: fzlthft;letter-spacing: 1px;height: 100%;line-height:.67rem;font-size: .24rem;margin: .6rem auto;background-color: #000000;color:#ffffff;min-width: 1.6rem}
+.main-tit span,.main-tit>p{display: inline-block;padding: 0 .4rem;font-family: fzlthft;letter-spacing: 1px;height: 100%;line-height:.67rem;font-size: .24rem;margin: .6rem auto;background-color: #000000;color:#ffffff;min-width: 1.6rem}
 .cocah-wrap .news-list li{margin-bottom: .53rem;overflow: hidden;}
 .cocah-wrap .news-list li a{display: block;position: relative;min-height: 5rem;}
 .cocah-wrap li .cover{display:block;width: 5rem;height: 5rem;background-position:center;background-size: cover;background-repeat: no-repeat;flex-basis: 5rem;position: absolute;top: 0;left: 0;}
@@ -162,3 +123,10 @@ header .menubox .menus{ background: url(../images/menu_icon.png) center center n
 .curriculum-wrap.newslist-container .news-list li a .content .shiherenqun p{font-size: .3rem;}
 .curriculum-wrap.newslist-container .news-list li a .content .more{background-color: #000;color:#fff;font-family: fzlthft;letter-spacing: 1px;width: 3.73rem;}
 .curriculum-wrap.newslist-container .morebox{background-color: #d4d4dc;overflow: hidden;}
+
+/* 关于我们 */
+.about-container{padding-top: 1rem;background-color: #fff;}
+.about-container .about-wrap{margin-top: .15rem;}
+.about-wrap h2{font-size: .5rem;font-family: fzltthft;margin: .53rem auto;text-align: center;font-weight: normal;}
+.about-wrap .content p{padding:0 1.1rem;color:#b1b1b1;font-family: fzlthft;font-size: .27rem;line-height: .6rem;text-align: center;margin-bottom: .4rem;}
+.about-wrap h3{font-size: .4rem;font-family: fzlthft;margin: .53rem auto;text-align: center;font-weight: normal;}

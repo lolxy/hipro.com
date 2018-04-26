@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-26 18:02:16
+Date: 2018-04-26 21:40:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -730,7 +730,7 @@ CREATE TABLE `hi_posts` (
 -- ----------------------------
 -- Records of hi_posts
 -- ----------------------------
-INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43:40', '', null, null, '关于我们', '关于我们', '1', '1', '2018-04-24 22:43:29', null, '0', '2', '', '0', '{\"template\":\"about\",\"thumb\":\"\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43:40', '<div class=\"about-container\"><div class=\"about-wrap\"><div class=\"main-tit\"><p>关于我们</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>关于HIPRO</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div></div><div class=\"about-wrap\"><div class=\"main-tit\"><p>空间</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>有氧运动区</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h2>固定器械区</h2><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div></div><div class=\"about-wrap\"><div class=\"main-tit\"><p>设备</p></div><div class=\"content\"><h3>跑步机</h3><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div><div class=\"content\"><h3>跑步机</h3><p>除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。除了锻炼课程，他们拥有丰富的经验。</p></div><div class=\"img-box\"><img src=\"__TMPL__Public/assets/images/img.png\" alt=\"\"/><img src=\"/data/upload/ueditor/20180426/5ae1d6461397f.png\" title=\"hh.png\" alt=\"hh.png\"/></div></div></div>', null, null, '关于我们', '关于我们', '1', '1', '2018-04-24 22:43:29', null, '0', '2', '', '0', '{\"template\":\"page\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('2', '1', '联系我们', null, '2018-04-24 22:43:53', '', null, null, '联系我们', '联系我们', '1', '1', '2018-04-24 22:43:43', null, '0', '2', '', '0', '{\"template\":\"contact\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('3', '1', '地图导航', null, '2018-04-24 22:44:17', '', null, null, '地图导航', '地图导航', '1', '1', '2018-04-24 22:43:54', null, '0', '2', '', '0', '{\"template\":\"map\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('4', '1', '', null, '2018-04-25 15:02:19', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:31:48', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '2', '0', '0', '0');
@@ -964,7 +964,7 @@ CREATE TABLE `hi_users` (
 -- ----------------------------
 -- Records of hi_users
 -- ----------------------------
-INSERT INTO `hi_users` VALUES ('1', 'admin', '###e5830b5cf8a5cd379ae42f87faa6b2f4', 'admin', 'admin@qq.com', 'www.hipro.com', '', '0', '2000-01-01', '', '127.0.0.1', '2018-04-25 11:02:44', '2018-01-07 09:42:27', '', '1', '0', '1', '0', '');
+INSERT INTO `hi_users` VALUES ('1', 'admin', '###e5830b5cf8a5cd379ae42f87faa6b2f4', 'admin', 'admin@qq.com', 'www.hipro.com', '', '0', '2000-01-01', '', '127.0.0.1', '2018-04-26 21:02:05', '2018-01-07 09:42:27', '', '1', '0', '1', '0', '');
 
 -- ----------------------------
 -- Table structure for `hi_user_favorites`

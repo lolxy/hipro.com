@@ -5,12 +5,16 @@
 		<meta name="keywords" content="{$seo_keywords}" />
 		<meta name="description" content="{$seo_description}">
 		<tc_include file="Public:head" />
+		<style>
+			.curriculum-wrap .main-tit span{margin-bottom: .27rem;}
+			.curriculum-wrap.newslist-container .news-list li a .content{padding-top: .27rem;}
+		</style>
 	</head>
 <body>
 <tc_include file="Public:nav" />
 
 <section class="wrapper">
-  <div class="newslist-container">
+  <div class="newslist-container curriculum-wrap">
 
 		<?php
 		    $cid = $cat_id;
@@ -20,6 +24,10 @@
 		    $lists = $content['posts'];
 		    $pager=$content['page'];
 		?>
+
+		<div class="main-tit">
+			<span>课程</span>
+		</div>
 
 		<notempty name="lists">
     <div class="news-list">
@@ -32,7 +40,14 @@
           <a href="{:leuu('Portal/article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}">
           	<div class="content">
             	<h2 class="text-ellipsis">{$vos.post_title}</h2>
-           		<p class="text-ellipsis3">{$vos.post_excerpt}</p>
+           		<p>{$vos.post_excerpt}</p>
+							<notempty name="vos.leixing">
+								<div class="shiherenqun">
+									<div class="closes">&times;</div>
+									<h3>课程适合人群</h3>
+									<p>{$vos.leixing}</p>
+								</div>
+							</notempty>
             </div>
           	<if condition="empty($smeta['thumb'])">
                <img src="__TMPL__Public/assets/images/default_tupian1.png" alt="">
@@ -43,7 +58,7 @@
         </li>
         </volist>
       </ul>
-      <div class="more">查看更多</div>
+      <div class="morebox"><div class="more">查看更多</div></div>
     </div>
 		<else/>
 			<div class="nomore">-- 没有更多数据 --</div>

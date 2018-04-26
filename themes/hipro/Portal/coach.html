@@ -10,17 +10,19 @@
 <tc_include file="Public:nav" />
 
 <section class="wrapper">
-  <div class="newslist-container">
+  <div class="cocah-wrap">
 
 		<?php
 		    $cid = $cat_id;
 		    $tag = "order:listorder asc,post_modified desc;";
-		    $pagesize = '5';
+		    $pagesize = '8';
 		    $content=sp_sql_posts_paged_bycatid($cid,$tag,$pagesize);
 		    $lists = $content['posts'];
 		    $pager=$content['page'];
 		?>
-
+		<div class="main-tit">
+			<span>教练</span>
+		</div>
 		<notempty name="lists">
     <div class="news-list">
       <ul id="newsullist">
@@ -30,15 +32,18 @@
 			</php>
         <li>
           <a href="{:leuu('Portal/article/index',array('id'=>$vos['object_id'],'cid'=>$vos['term_id']))}">
-          	<div class="content">
-            	<h2 class="text-ellipsis">{$vos.post_title}</h2>
+						<if condition="empty($smeta['thumb'])">
+               <div class="cover" style="background-image:url(__TMPL__Public/assets/images/default_tupian1.png)"></div>
+            <else />
+               <div class="cover" style="background-image:url({:sp_get_asset_upload_path($smeta['thumb'])})"></div>
+           	</if>
+						<div class="content">
+							<div class="p-head">
+								<h1>{$vos.post_title}</h1>
+	            	<p class="des">{$vos.leixing} / {$vos.jingyan}</p>
+							</div>
            		<p class="text-ellipsis3">{$vos.post_excerpt}</p>
             </div>
-          	<if condition="empty($smeta['thumb'])">
-               <img src="__TMPL__Public/assets/images/default_tupian1.png" alt="">
-            <else />
-                <img src="{:sp_get_asset_upload_path($smeta['thumb'])}" alt="">
-           	</if>
           </a>
         </li>
         </volist>
