@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-27 22:47:01
+Date: 2018-04-27 22:50:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -481,9 +481,9 @@ INSERT INTO `hi_menu` VALUES ('79', '75', 'Admin', 'Link', 'edit', '', '1', '0',
 INSERT INTO `hi_menu` VALUES ('80', '79', 'Admin', 'Link', 'edit_post', '', '1', '0', '提交编辑', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('81', '75', 'Admin', 'Link', 'add', '', '1', '0', '添加友情链接', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('82', '81', 'Admin', 'Link', 'add_post', '', '1', '0', '提交添加', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('85', '0', 'Admin', 'Menu', 'default', '', '1', '1', '菜单管理', 'list', '', '1');
-INSERT INTO `hi_menu` VALUES ('86', '85', 'Admin', 'Navcat', 'default1', '', '1', '1', '前台菜单', '', '', '0');
-INSERT INTO `hi_menu` VALUES ('87', '86', 'Admin', 'Nav', 'index', '', '1', '1', '菜单管理', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('85', '0', 'Admin', 'Menu', 'default', '', '1', '0', '菜单管理', 'list', '', '1');
+INSERT INTO `hi_menu` VALUES ('86', '85', 'Admin', 'Navcat', 'default1', '', '1', '0', '前台菜单', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('87', '86', 'Admin', 'Nav', 'index', '', '1', '0', '菜单管理', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('88', '87', 'Admin', 'Nav', 'listorders', '', '1', '0', '前台导航排序', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('89', '87', 'Admin', 'Nav', 'delete', '', '1', '0', '删除菜单', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('90', '87', 'Admin', 'Nav', 'edit', '', '1', '0', '编辑菜单', '', '', '1000');
