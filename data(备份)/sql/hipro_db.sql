@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-04-26 22:39:35
+Date: 2018-04-27 22:47:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -482,7 +482,7 @@ INSERT INTO `hi_menu` VALUES ('80', '79', 'Admin', 'Link', 'edit_post', '', '1',
 INSERT INTO `hi_menu` VALUES ('81', '75', 'Admin', 'Link', 'add', '', '1', '0', '添加友情链接', '', '', '1000');
 INSERT INTO `hi_menu` VALUES ('82', '81', 'Admin', 'Link', 'add_post', '', '1', '0', '提交添加', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('85', '0', 'Admin', 'Menu', 'default', '', '1', '1', '菜单管理', 'list', '', '1');
-INSERT INTO `hi_menu` VALUES ('86', '85', 'Admin', 'Navcat', 'default1', '', '1', '0', '前台菜单', '', '', '0');
+INSERT INTO `hi_menu` VALUES ('86', '85', 'Admin', 'Navcat', 'default1', '', '1', '1', '前台菜单', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('87', '86', 'Admin', 'Nav', 'index', '', '1', '1', '菜单管理', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('88', '87', 'Admin', 'Nav', 'listorders', '', '1', '0', '前台导航排序', '', '', '0');
 INSERT INTO `hi_menu` VALUES ('89', '87', 'Admin', 'Nav', 'delete', '', '1', '0', '删除菜单', '', '', '1000');
@@ -587,21 +587,21 @@ CREATE TABLE `hi_nav` (
   `listorder` int(6) DEFAULT '0' COMMENT '排序',
   `path` varchar(255) NOT NULL DEFAULT '0' COMMENT '层级关系',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_nav
 -- ----------------------------
-INSERT INTO `hi_nav` VALUES ('1', '1', '0', '网站首页', '', 'home', '', '1', '0', '0-1');
-INSERT INTO `hi_nav` VALUES ('2', '1', '0', '别墅', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"1\";}}', '', '1', '0', '0-2');
-INSERT INTO `hi_nav` VALUES ('3', '1', '0', '私宅', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"2\";}}', '', '1', '0', '0-3');
-INSERT INTO `hi_nav` VALUES ('4', '1', '0', '公建', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"3\";}}', '', '1', '0', '0-4');
-INSERT INTO `hi_nav` VALUES ('5', '1', '0', '荣誉', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"2\";}}', '', '1', '0', '0-5');
-INSERT INTO `hi_nav` VALUES ('6', '1', '0', '资讯', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"1\";}}', '', '1', '0', '0-6');
-INSERT INTO `hi_nav` VALUES ('7', '1', '0', '服务', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"4\";}}', '', '0', '0', '0-7');
-INSERT INTO `hi_nav` VALUES ('8', '1', '0', '联系', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"5\";}}', '', '1', '0', '0-8');
+INSERT INTO `hi_nav` VALUES ('1', '1', '0', '首页', '', 'home', '', '1', '0', '0-1');
+INSERT INTO `hi_nav` VALUES ('2', '1', '0', '课程', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"3\";}}', '', '1', '0', '0-2');
+INSERT INTO `hi_nav` VALUES ('3', '1', '0', '会员', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"4\";}}', '', '1', '0', '0-3');
+INSERT INTO `hi_nav` VALUES ('4', '1', '0', '新闻中心', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"2\";}}', '', '1', '0', '0-4');
+INSERT INTO `hi_nav` VALUES ('5', '1', '0', '商城', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"5\";}}', '', '1', '0', '0-5');
 INSERT INTO `hi_nav` VALUES ('9', '2', '0', '订阅资讯', '', 'https://mp.weixin.qq.com/mp/homepage?__biz=MzU5MDI5Nzk4Mg==&hid=5&sn=92eccc205cde9ae3a57b13ee322209ab&scene=18&devicetype=android-23&version=26060135&lang=zh_CN&nettype=WIFI&ascene=7&session_us=gh_1cf15f85889d&wx_header=1', '', '1', '0', '0-9');
 INSERT INTO `hi_nav` VALUES ('10', '2', '0', '联系东西', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"5\";}}', '', '1', '0', '0-10');
+INSERT INTO `hi_nav` VALUES ('11', '1', '2', '教练', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"6\";}}', '', '1', '0', '0-2-11');
+INSERT INTO `hi_nav` VALUES ('12', '1', '2', '课程介绍', '', 'a:2:{s:6:\"action\";s:17:\"Portal/List/index\";s:5:\"param\";a:1:{s:2:\"id\";s:1:\"3\";}}', '', '1', '0', '0-2-12');
+INSERT INTO `hi_nav` VALUES ('13', '1', '2', '价格表', '', 'a:2:{s:6:\"action\";s:17:\"Portal/Page/index\";s:5:\"param\";a:1:{s:2:\"id\";s:2:\"23\";}}', '', '1', '0', '0-2-13');
 
 -- ----------------------------
 -- Table structure for `hi_nav_cat`
@@ -725,7 +725,7 @@ CREATE TABLE `hi_posts` (
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`),
   KEY `post_date` (`post_date`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hi_posts
@@ -734,13 +734,13 @@ INSERT INTO `hi_posts` VALUES ('1', '1', '关于我们', null, '2018-04-24 22:43
 INSERT INTO `hi_posts` VALUES ('2', '1', '联系我们', null, '2018-04-24 22:43:53', '', null, null, '联系我们', '联系我们', '1', '1', '2018-04-24 22:43:43', null, '0', '2', '', '0', '{\"template\":\"contact\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('3', '1', '地图导航', null, '2018-04-24 22:44:17', '', null, null, '地图导航', '地图导航', '1', '1', '2018-04-24 22:43:54', null, '0', '2', '', '0', '{\"template\":\"map\",\"thumb\":\"\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('4', '1', '', null, '2018-04-25 15:02:19', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:31:48', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '2', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('5', '1', '', null, '2018-04-25 15:38:00', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', 'dasdsadsad', 'dsdsdas', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:45', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '1', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('5', '1', '', null, '2018-04-25 15:38:00', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', 'dasdsadsad', 'dsdsdas', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:45', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '3', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('6', '1', '', null, '2018-04-25 15:38:03', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '123', '123', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:36', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('7', '1', '', null, '2018-04-25 15:40:13', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:13', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('8', '1', '', null, '2018-04-25 15:40:14', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', '10年健身经验', '顶级瑜伽教练', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:14', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('11', '1', '', null, '2018-04-25 16:38:57', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡可享有20次健身课程', 'PLUS card', '', '1', '1', '2018-04-26 14:18:08', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae03ee6d24ef.png\"}', '1', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('12', '1', '', null, '2018-04-25 16:40:51', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡可享有10次健身课程', 'GO card', '', '1', '1', '2018-04-26 14:17:45', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae16f05e1f70.png\"}', '0', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('13', '1', '', null, '2018-04-26 14:18:14', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡一年内可享有无数次健身课程', 'KEEP card', '', '1', '1', '2018-04-26 14:19:01', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae16f05e1f70.png\"}', '0', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('12', '1', '', null, '2018-04-25 16:40:51', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡可享有10次健身课程', 'GO card', '', '1', '1', '2018-04-26 14:17:45', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae16f05e1f70.png\"}', '18', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('13', '1', '', null, '2018-04-26 14:18:14', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡一年内可享有无数次健身课程', 'KEEP card', '', '1', '1', '2018-04-26 14:19:01', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae16f05e1f70.png\"}', '1', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('10', '1', '', null, '2018-04-25 15:40:53', '<p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p>除了锻炼课程，</p><p>他们拥有丰富我经验。课程，</p><p>他们拥有丰富的经验。</p><p><br/></p>', 'dasdsadsad', 'dsdsdas', '李 晓明', '除了锻炼课程，\r\n他们拥有丰富我经验。课程，\r\n他们拥有丰富的经验。', '1', '1', '2018-04-25 15:40:53', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae028500c505.png\"}', '1', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('14', '1', '', null, '2018-04-26 14:18:14', '', '场内所有设备免费使用（特殊设备需预约）', '拥有此卡一年内可享有无数次次健身课程', 'PRO card', '', '1', '1', '2018-04-26 14:19:32', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180425\\/5ae03ee6d24ef.png\"}', '1', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('15', '1', 'APPLE WATCH', null, '2018-04-26 14:22:35', '', null, null, 'APPLE WATCH', '会员积分满1000元，即可兑换。', '1', '1', '2018-04-26 14:23:25', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae1705a12df4.png\"}', '0', '0', '0', '0');
@@ -749,8 +749,9 @@ INSERT INTO `hi_posts` VALUES ('17', '1', 'APPLE WATCH', null, '2018-04-26 14:23
 INSERT INTO `hi_posts` VALUES ('18', '1', 'APPLE WATCH', null, '2018-04-26 14:23:32', '', null, null, 'APPLE WATCH', '会员积分满1000元，即可兑换。', '1', '1', '2018-04-26 14:23:32', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae1705a12df4.png\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('19', '1', '垫上普拉提', null, '2018-04-26 14:39:09', '', null, '肌肉含量低的人群 | 力量太差的人群 | 提高运动表现的人群 | 想增加体重的人群 | 想让身体紧实的女性 ', '垫上普拉提', '它主要是锻炼人体深层的小肌肉群，维持和改善外观正常活动姿势、达到身体平衡、创展躯干和活动能力、强调对核心肌群的控制、加强人脑对肢体及骨骼肌肉组织的神经感应及支配，再配合正确的呼吸方法所进行的一项全身协调运动。', '1', '1', '2018-04-26 14:44:50', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae1755f28167.png\"}', '0', '0', '0', '0');
 INSERT INTO `hi_posts` VALUES ('20', '1', '垫上普拉提', null, '2018-04-26 14:45:01', '', null, '肌肉含量低的人群 | 力量太差的人群 | 提高运动表现的人群 | 想增加体重的人群 | 想让身体紧实的女性 ', '垫上普拉提', '它主要是锻炼人体深层的小肌肉群，维持和改善外观正常活动姿势、达到身体平衡、创展躯干和活动能力、强调对核心肌群的控制、加强人脑对肢体及骨骼肌肉组织的神经感应及支配，再配合正确的呼吸方法所进行的一项全身协调运动。', '1', '1', '2018-04-26 14:45:01', null, '0', '3', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae1755f28167.png\"}', '1', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('21', '1', '盛大开业', 'HIPRO', '2018-04-26 15:23:47', '<p>MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。</p>', null, null, 'HIPRO / 盛大开业', 'MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。', '1', '1', '2018-04-26 15:25:30', null, '0', '1', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae17ee874718.png\"}', '2', '0', '0', '0');
-INSERT INTO `hi_posts` VALUES ('22', '1', '盛大开业', 'HIPRO', '2018-04-26 15:25:36', '<p>MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。</p>', null, null, 'HIPRO / 盛大开业', 'MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。', '1', '1', '2018-04-26 15:25:36', null, '0', '1', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae17ee874718.png\"}', '1', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('21', '1', '盛大开业', 'HIPRO', '2018-04-26 15:23:47', '<p>MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。</p>', null, null, 'HIPRO / 盛大开业', 'MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。', '1', '1', '2018-04-26 15:25:30', null, '0', '1', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae17ee874718.png\"}', '4', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('22', '1', '盛大开业', 'HIPRO', '2018-04-26 15:25:36', '<p>MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。</p>', null, null, 'HIPRO / 盛大开业', 'MFT综合格斗健身，是一项以武术及现代格斗为工具。将其训练方法融入至大众健身的私教训练项目。', '1', '1', '2018-04-26 15:25:36', null, '0', '1', '', '0', '{\"thumb\":\"portal\\/20180426\\/5ae17ee874718.png\"}', '4', '0', '0', '0');
+INSERT INTO `hi_posts` VALUES ('23', '1', '价格表', null, '2018-04-27 19:59:53', '<div class=\"price-container\"><div class=\"price-wrap\"><div class=\"main-tit\"><p>价格表</p></div><div class=\"img-box\"><ul class=\" list-paddingleft-2\"><li><p><img src=\"/data/upload/ueditor/20180427/5ae3374d00d80.png\" title=\"1.png\" alt=\"1.png\"/></p></li><li><p><img src=\"/data/upload/ueditor/20180427/5ae3374d00d80.png\" title=\"1.png\" alt=\"1.png\"/></p></li></ul></div><div class=\"content\"><h2>常规课程</h2><div class=\"closes\">&amp;times;</div><p>瘦身课程 / 增肌课程</p><div class=\"kc-list\"><ul class=\" list-paddingleft-2\"><li><p>单次体验</p><p><strong><span style=\"text-decoration:line-through;\">￥</span>500</strong><em>/</em>节</p></li><li><p>一次性购课1-24节</p><p><strong><span style=\"text-decoration:line-through;\">￥</span>400</strong><em>/</em>节</p></li><li><p>一次性购课24节以上</p><p><strong><span style=\"text-decoration:line-through;\">￥</span>350</strong><em>/</em>节</p></li></ul></div></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180427/5ae3377e8b979.png\" title=\"2.png\" alt=\"2.png\"/></div><div class=\"img-box\"><img src=\"/data/upload/ueditor/20180427/5ae3377e8b979.png\" title=\"2.png\" alt=\"2.png\"/></div><div class=\"content\"><h2>特色课程</h2><div class=\"closes\">&amp;times;</div><p>垫上普拉提 / 全身伸展课程 / MFT综合格斗健身 / 运动康复课程</p><div class=\"kc-list\"><ul class=\" list-paddingleft-2\"><li><p>单次体验门市价</p><p><strong><span style=\"text-decoration:line-through;\">￥</span>600</strong><em>/</em>节</p></li><li><p>一次性购课1-24节</p><p><strong><span style=\"text-decoration:line-through;\">￥</span>450</strong><em>/</em>节</p></li><li><p>一次性购课24节以上</p><p><strong><span style=\"text-decoration:line-through;\">￥</span>400</strong><em>/</em>节</p></li></ul></div></div><div class=\"p-foot\"><h3 class=\"tips\">TIPS</h3><p>为保证私教质量，每位客户限购50节，仅限50席位。</p><p>以上报价仅适用于试运营阶段尝鲜体验，正式报价以HIPRO官方调整为主。</p></div></div></div>', null, null, '价格表', '价格表', '1', '1', '2018-04-27 19:59:12', null, '0', '2', '', '0', '{\"template\":\"page\",\"thumb\":\"\"}', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `hi_role`
@@ -1006,8 +1007,8 @@ CREATE TABLE `hi_variable` (
 -- ----------------------------
 -- Records of hi_variable
 -- ----------------------------
-INSERT INTO `hi_variable` VALUES ('6', 'address', '福建省福州市仓山区建新镇金达路130号3号厂房1020单元', '公司地址', '0');
-INSERT INTO `hi_variable` VALUES ('7', 'tell', '18659390006', '联系电话', '0');
+INSERT INTO `hi_variable` VALUES ('6', 'address', '福建省福州市台江区群众路116号世茂国际中心56层5602', '公司地址', '0');
+INSERT INTO `hi_variable` VALUES ('7', 'tell', '15806000088', '联系电话', '0');
 INSERT INTO `hi_variable` VALUES ('8', 'contactName', '林女士', '联系人', '0');
 INSERT INTO `hi_variable` VALUES ('9', 'qq', '604749526', 'QQ号', '0');
-INSERT INTO `hi_variable` VALUES ('10', 'aboutus', '東形西見室内设计成立于2017年，由从业经验丰富的优秀设计团队组成。主要承接各类空间室内设计与景观设计，以新中式及现代风格为主，秉承着设计带来美好生活的匠心精神，深受客户喜爱与业界认可。', '关于我们', '0');
+INSERT INTO `hi_variable` VALUES ('10', 'email', 'hipro@126.com', '电子邮箱', '0');

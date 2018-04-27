@@ -7,33 +7,33 @@
 		<link rel="stylesheet" href="__TMPL__Public/assets/css/swiper.min.css">
 		<tc_include file="Public:head" />
 		<style>
-			body{transition:all ease-in-out 2s;}
-			.body-hide{opacity:0;}
-			.wrapper{position: relative;z-index: 2;background-color:#d4d4dc;}
 			.swiper-slide img{width:100%;}
 			.swiper-container-horizontal>.swiper-pagination-bullets{bottom: 47px;}
 			.swiper-pagination-bullet{background: rgba(255,255,255,.6);border-radius: 3px;width: 26px;height: 4px;}
 			.swiper-pagination-bullet-active{background: #ffffff;}
 		</style>
 	</head>
-<body class="body-hide">
+<body>
 <tc_include file="Public:nav" />
 
 <php>
 $home_slides=sp_getslide("pc_index_slide");
 </php>
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <foreach name="home_slides" item="vo" key="k">
-            <div class="swiper-slide">
-                <a href="{$vo['slide_url']}"><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="{$vo['slide_name']}"/></a>
-            </div>
-        </foreach>
-    </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
+<div class="wrapper">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <foreach name="home_slides" item="vo" key="k">
+	            <div class="swiper-slide">
+	                <a href="{$vo['slide_url']}"><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="{$vo['slide_name']}"/></a>
+	            </div>
+	        </foreach>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	</div>
 </div>
 
+<tc_include file="Public:footer" />
 <tc_include file="Public:scripts"/>
 <script>
   var mySwiper = new Swiper ('.swiper-container', {
@@ -43,7 +43,6 @@ $home_slides=sp_getslide("pc_index_slide");
 		paginationClickable: true,
 		autoHeight:true
   	})
-	$("body").removeClass("body-hide");
   </script>
 {:hook('footer_end')}
 </body>
