@@ -15,7 +15,7 @@
 		<?php
 		    $cid = $cat_id;
 		    $tag = "order:listorder asc,post_modified desc;";
-		    $pagesize = '8';
+		    $pagesize = '10';
 		    $content=sp_sql_posts_paged_bycatid($cid,$tag,$pagesize);
 		    $lists = $content['posts'];
 		    $pager=$content['page'];
@@ -47,7 +47,9 @@
         </li>
         </volist>
       </ul>
-      <div class="more">查看更多</div>
+      <if condition="$content.total_pages gt 1">
+      	<div class="more">查看更多</div>
+      </if>
     </div>
 		<else/>
 			<div class="nomore">-- 没有更多数据 --</div>
