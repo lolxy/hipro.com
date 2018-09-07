@@ -39,7 +39,8 @@ header .navlist{flex:1;margin: 0 20px;}
 .detail-container{max-width: 1000px;margin: 0 auto;padding-bottom: 30px;}
 .detail-container .detail-body img{max-width:100% !important;width:100% !important;vertical-align:bottom !important;height: auto !important;}
 /* 单页样式 */
-.page-wrapper{padding: 0.267rem;background-color: #fff;margin: 0 auto;margin-bottom: 10px;max-width: 1000px;}
+.page-wrapper{padding: 0.267rem;background-color: #fff;margin-bottom: 10px;}
+.page-wrapper .page-content-wrap{margin: 0 auto;max-width: 1000px;}
 .page-wrapper img{width:100%;vertical-align: bottom;}
 /*分页*/
 .pagination{display:block;text-align:center;overflow:hidden;}

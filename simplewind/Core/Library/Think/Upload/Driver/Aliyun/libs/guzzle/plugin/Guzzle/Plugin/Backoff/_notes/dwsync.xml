@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AbstractBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562183352825" remote="131686326000000000" Dst="0" />
+<file name="AbstractErrorCodeBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562185580531" remote="131686326000000000" Dst="0" />
+<file name="BackoffLogger.php" server="byu4525860001.my3w.com//htdocs/" local="131807562185809323" remote="131686326000000000" Dst="0" />
+<file name="BackoffStrategyInterface.php" server="byu4525860001.my3w.com//htdocs/" local="131807562188127263" remote="131686326000000000" Dst="0" />
+<file name="BackoffPlugin.php" server="byu4525860001.my3w.com//htdocs/" local="131807562188185669" remote="131686326000000000" Dst="0" />
+<file name="CallbackBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562192026907" remote="131686326000000000" Dst="0" />
+<file name="ConstantBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562192036181" remote="131686326000000000" Dst="0" />
+<file name="ExponentialBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562194562823" remote="131686326000000000" Dst="0" />
+<file name="CurlBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562194572619" remote="131686326000000000" Dst="0" />
+<file name="HttpBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562196829328" remote="131686326000000000" Dst="0" />
+<file name="LinearBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562196979016" remote="131686326000000000" Dst="0" />
+<file name="TruncatedBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562199235015" remote="131686326000000000" Dst="0" />
+<file name="ReasonPhraseBackoffStrategy.php" server="byu4525860001.my3w.com//htdocs/" local="131807562199295202" remote="131686326000000000" Dst="0" />
+</dwsync>

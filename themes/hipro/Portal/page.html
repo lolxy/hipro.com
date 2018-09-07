@@ -10,7 +10,11 @@
 <tc_include file="Public:nav" />
 
 <section class="wrapper">
-	{:htmlspecialchars_decode($post_content)}
+<div class="page-wrapper">
+<div class="page-content-wrap">
+{:htmlspecialchars_decode($post_content)}
+</div>
+</div>
 </section>
 
 <tc_include file="Public:footer" />

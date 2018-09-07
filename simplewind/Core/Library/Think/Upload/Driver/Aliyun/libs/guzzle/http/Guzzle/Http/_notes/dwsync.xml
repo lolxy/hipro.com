@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AbstractEntityBodyDecorator.php" server="byu4525860001.my3w.com//htdocs/" local="131807562103391795" remote="131686326000000000" Dst="0" />
+<file name="CachingEntityBody.php" server="byu4525860001.my3w.com//htdocs/" local="131807562105816668" remote="131686326000000000" Dst="0" />
+<file name="Client.php" server="byu4525860001.my3w.com//htdocs/" local="131807562106328026" remote="131686326000000000" Dst="0" />
+<file name="ClientInterface.php" server="byu4525860001.my3w.com//htdocs/" local="131807562108423595" remote="131686326000000000" Dst="0" />
+<file name="EntityBody.php" server="byu4525860001.my3w.com//htdocs/" local="131807562116246178" remote="131686326000000000" Dst="0" />
+<file name="EntityBodyInterface.php" server="byu4525860001.my3w.com//htdocs/" local="131807562118570587" remote="131686326000000000" Dst="0" />
+<file name="IoEmittingEntityBody.php" server="byu4525860001.my3w.com//htdocs/" local="131807562130783042" remote="131686326000000000" Dst="0" />
+<file name="Mimetypes.php" server="byu4525860001.my3w.com//htdocs/" local="131807562153984721" remote="131686326000000000" Dst="0" />
+<file name="QueryString.php" server="byu4525860001.my3w.com//htdocs/" local="131807562161384440" remote="131686326000000000" Dst="0" />
+<file name="ReadLimitEntityBody.php" server="byu4525860001.my3w.com//htdocs/" local="131807562163309667" remote="131686326000000000" Dst="0" />
+<file name="RedirectPlugin.php" server="byu4525860001.my3w.com//htdocs/" local="131807562164193698" remote="131686326000000000" Dst="0" />
+<file name="StaticClient.php" server="byu4525860001.my3w.com//htdocs/" local="131807562166177136" remote="131686326000000000" Dst="0" />
+<file name="Url.php" server="byu4525860001.my3w.com//htdocs/" local="131807562166539895" remote="131686326000000000" Dst="0" />
+</dwsync>

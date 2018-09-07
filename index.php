@@ -3,6 +3,8 @@
  * 入口文件
  * Some rights reserved：www.thinkcmf.com
  */
+header("Content-type: text/html; charset=utf-8");
+die("网站维护中...");
 if (ini_get('magic_quotes_gpc')) {
 	function stripslashesRecursive(array $array){
 		foreach ($array as $k => $v) {

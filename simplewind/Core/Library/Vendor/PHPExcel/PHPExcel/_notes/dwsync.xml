@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Autoloader.php" server="byu4525860001.my3w.com//htdocs/" local="131807562752844488" remote="131686327800000000" Dst="0" />
+<file name="CachedObjectStorageFactory.php" server="byu4525860001.my3w.com//htdocs/" local="131807562813266986" remote="131686327800000000" Dst="0" />
+<file name="Calculation.php" server="byu4525860001.my3w.com//htdocs/" local="131807562957128936" remote="131686327800000000" Dst="0" />
+<file name="Cell.php" server="byu4525860001.my3w.com//htdocs/" local="131807562962381531" remote="131686327800000000" Dst="0" />
+<file name="Chart.php" server="byu4525860001.my3w.com//htdocs/" local="131807562975147260" remote="131686327800000000" Dst="0" />
+<file name="Comment.php" server="byu4525860001.my3w.com//htdocs/" local="131807562977010398" remote="131686327800000000" Dst="0" />
+<file name="DocumentProperties.php" server="byu4525860001.my3w.com//htdocs/" local="131807562978501514" remote="131686327800000000" Dst="0" />
+<file name="DocumentSecurity.php" server="byu4525860001.my3w.com//htdocs/" local="131807562979396206" remote="131686327800000000" Dst="0" />
+<file name="Exception.php" server="byu4525860001.my3w.com//htdocs/" local="131807562981247463" remote="131686327800000000" Dst="0" />
+<file name="HashTable.php" server="byu4525860001.my3w.com//htdocs/" local="131807562981727510" remote="131686327800000000" Dst="0" />
+<file name="IComparable.php" server="byu4525860001.my3w.com//htdocs/" local="131807562983998524" remote="131686327800000000" Dst="0" />
+<file name="IOFactory.php" server="byu4525860001.my3w.com//htdocs/" local="131807562984023564" remote="131686327800000000" Dst="0" />
+<file name="NamedRange.php" server="byu4525860001.my3w.com//htdocs/" local="131807562986824389" remote="131686327800000000" Dst="0" />
+<file name="ReferenceHelper.php" server="byu4525860001.my3w.com//htdocs/" local="131807563024997793" remote="131686327800000000" Dst="0" />
+<file name="Settings.php" server="byu4525860001.my3w.com//htdocs/" local="131807563029700303" remote="131686327800000000" Dst="0" />
+<file name="RichText.php" server="byu4525860001.my3w.com//htdocs/" local="131807563029842526" remote="131686327800000000" Dst="0" />
+<file name="Style.php" server="byu4525860001.my3w.com//htdocs/" local="131807563106735096" remote="131686327800000000" Dst="0" />
+<file name="WorksheetIterator.php" server="byu4525860001.my3w.com//htdocs/" local="131807563145849098" remote="131686327800000000" Dst="0" />
+<file name="Worksheet.php" server="byu4525860001.my3w.com//htdocs/" local="131807563147724084" remote="131686327800000000" Dst="0" />
+</dwsync>
